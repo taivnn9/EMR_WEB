@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, 
 // import { LoaiBenhAnEMR } from '@app/_models/enum/LoaiBenhAnEMR';
 import { HanhChinh_NoiTruYHCT } from './HanhChinh_NoiTruYHCT.component';
 import { HanhChinh_BenhAnSanKhoa } from './HanhChinh_BenhAnSanKhoa.component';
+import { HanhChinh_NgoaiTruYHCT } from './HanhChinh_NgoaiTruYHCT.component';
 import { Subscription } from 'rxjs';
 import { SharedService } from '@app/_services/shared.service';
 import { Command } from 'protractor';
@@ -64,6 +65,16 @@ export class HanhChinhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     this.dynamicComponent = <HanhChinh_BenhAnSanKhoa>this.dynamicInsert.createComponent(componentFactorySK).instance;
                     break;
+
+                case LoaiBenhAnEMR.NgoaiTruYHCT:
+                    // tslint:disable-next-line:variable-name
+                    const componentFactory_NgoaiTruYHCT = this.factoryResolver.resolveComponentFactory(HanhChinh_NgoaiTruYHCT);
+
+                    this.dynamicInsert.clear();
+                    // tslint:disable-next-line:max-line-length
+                    this.dynamicComponent = <HanhChinh_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactory_NgoaiTruYHCT).instance;
+                    break;
+
                 default:
                     break;
             }

@@ -30,12 +30,16 @@ import { MainWindowComponent } from './admin/MainWindow';
 import { HanhChinhBaseComponent } from './admin/HanhChinh/HanhChinhBase.component';
 import { HanhChinh_NoiTruYHCT } from './admin/HanhChinh/HanhChinh_NoiTruYHCT.component';
 import { HanhChinh_BenhAnSanKhoa } from './admin/HanhChinh/HanhChinh_BenhAnSanKhoa.component';
+import { HanhChinh_NgoaiTruYHCT } from './admin/HanhChinh/HanhChinh_NgoaiTruYHCT.component';
 import { HoiBenh_NoiTruYHCT } from './admin/HoiBenh/HoiBenh_NoiTruYHCT.component';
 import { HoiBenh_BenhAnSanKhoa } from './admin/HoiBenh/HoiBenh_BenhAnSanKhoa.component';
+import { HoiBenh_NgoaiTruYHCT } from './admin/HoiBenh/HoiBenh_NgoaiTruYHCT.component';
 import { KhamBenh_NoiTruYHCT } from './admin/KhamBenh/KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_BenhAnSanKhoa } from './admin/KhamBenh/KhamBenh_BenhAnSanKhoa.component';
+import { KhamBenh_NgoaiTruYHCT } from './admin/KhamBenh/KhamBenh_NgoaiTruYHCT.component';
 import { TongKet_NoiTruYHCT } from './admin/TongKet/TongKet_NoiTruYHCT.component';
 import { TongKet_BenhAnSanKhoa } from './admin/TongKet/TongKet_BenhAnSanKhoa.component';
+import { TongKet_NgoaiTruYHCT } from './admin/TongKet/TongKet_NgoaiTruYHCT.component';
 import { EmrService } from './_services/emr.service';
 import { PdfViewerComponent } from './public/pdfviewer/pdfviewer.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -62,8 +66,8 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
   declarations: [
     AppComponent,
     KhoiTaoComponent,
-    SafePipe, 
-    
+    SafePipe,
+
     MainWindowComponent,
 
     // Hành chính
@@ -71,6 +75,7 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     HanhChinh_NoiTruYHCT,
     HanhChinh_Base,
     HanhChinh_BenhAnSanKhoa,
+    HanhChinh_NgoaiTruYHCT,
 
 
     // Hỏi bệnh
@@ -79,7 +84,7 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     HoiBenh_NoiKhoa,
     HoiBenh_BenhAnSanKhoa,
     HoiBenh_DaLieu,
-    
+    HoiBenh_NgoaiTruYHCT,
 
     // Khám bệnh
     KhamBenhBaseComponent,
@@ -87,12 +92,15 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     KhamBenh_NoiKhoa,
     KhamBenh_BenhAnSanKhoa,
     KhamBenh_DaLieu,
+    KhamBenh_NgoaiTruYHCT,
+
     // Tổng kết
     TongKetBaseComponent,
     TongKet_NoiTruYHCT,
     TongKet_NoiKhoa,
     TongKet_BenhAnSanKhoa,
     TongKet_DaLieu,
+    TongKet_NgoaiTruYHCT,
 
     PdfViewerComponent,
     VirtualScrollExampleComponent,
@@ -111,7 +119,7 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     HttpClientModule,
     AppRoutingModule,
     NgxExtendedPdfViewerModule,
-    // NgOtpInputModule, 
+    // NgOtpInputModule,
     NgSelectModule,
     AngularMyDatePickerModule,
     NgxDocViewerModule,

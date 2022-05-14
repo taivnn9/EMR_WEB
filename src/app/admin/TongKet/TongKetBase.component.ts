@@ -5,8 +5,9 @@ import { TongKet_DaLieu } from './TongKet_DaLieu.component';
 import { TongKet_NoiTruYHCT } from './TongKet_NoiTruYHCT.component';
 import { TongKet_NoiKhoa } from './TongKet_NoiKhoa.component';
 import { TongKet_BenhAnSanKhoa } from './TongKet_BenhAnSanKhoa.component';
+import { TongKet_NgoaiTruYHCT } from './TongKet_NgoaiTruYHCT.component';
 
-@Component({ 
+@Component({
     selector: 'TongKetBaseComponent',
     template: `<ng-template #dynamicInsert></ng-template>`
 })
@@ -20,11 +21,11 @@ export class TongKetBaseComponent implements OnInit, AfterViewInit {
     ) { }
     ngAfterViewInit(): void {
         setTimeout(() => {
-            
+
             switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
                 case LoaiBenhAnEMR.NoiTruYHCT:
                     const componentFactoryNoiTruYHCT = this.factoryResolver.resolveComponentFactory(TongKet_NoiTruYHCT);
-        
+
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
@@ -38,7 +39,7 @@ export class TongKetBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(TongKet_BenhAnSanKhoa);
-        
+
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
@@ -47,12 +48,20 @@ export class TongKetBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.DaLieu:
                     const componentFactoryDaLieu = this.factoryResolver.resolveComponentFactory(TongKet_DaLieu);
-        
+
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
                     const dynamicComponentDaLieu = <TongKet_DaLieu> this.dynamicInsert.createComponent(componentFactoryDaLieu).instance;
                     // dynamicComponent.value = 10;
+                    break;
+                case LoaiBenhAnEMR.NgoaiTruYHCT:
+                    const componentFactoryNgoaiTruYHCT = this.factoryResolver.resolveComponentFactory(TongKet_NgoaiTruYHCT);
+
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // tslint:disable-next-line:max-line-length
+                    const dynamicComponentNgoaiTruYHCT = <TongKet_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactoryNgoaiTruYHCT).instance;
                     break;
                 default:
                     break;
