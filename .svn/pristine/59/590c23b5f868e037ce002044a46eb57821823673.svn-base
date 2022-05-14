@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "497b6515-606f-4f51-a8db-e6696147633e",
+		"name": "SDA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lấy danh mục Tỉnh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sda.12c.vn/api/SdaProvince/Get?param=eyJBcGlEYXRhIjp7IklTX0FDVElWRSI6MX19",
+					"protocol": "http",
+					"host": [
+						"sda",
+						"12c",
+						"vn"
+					],
+					"path": [
+						"api",
+						"SdaProvince",
+						"Get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "eyJBcGlEYXRhIjp7IklTX0FDVElWRSI6MX19",
+							"description": "base64({\"ApiData\":{\"IS_ACTIVE\":1}})"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh mục Huyện",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sda.12c.vn/api/SdaDistrict/Get?param=eyJBcGlEYXRhIjp7IklTX0FDVElWRSI6MX19",
+					"protocol": "http",
+					"host": [
+						"sda",
+						"12c",
+						"vn"
+					],
+					"path": [
+						"api",
+						"SdaDistrict",
+						"Get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "eyJBcGlEYXRhIjp7IklTX0FDVElWRSI6MX19",
+							"description": "base64({\"ApiData\":{\"IS_ACTIVE\":1}})"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lây danh mục Xã",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sda.12c.vn/api/SdaCommune/Get?param=eyJBcGlEYXRhIjp7IklTX0FDVElWRSI6MX19",
+					"protocol": "http",
+					"host": [
+						"sda",
+						"12c",
+						"vn"
+					],
+					"path": [
+						"api",
+						"SdaCommune",
+						"Get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "eyJBcGlEYXRhIjp7IklTX0FDVElWRSI6MX19",
+							"description": "base64({\"ApiData\":{\"IS_ACTIVE\":1}})"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

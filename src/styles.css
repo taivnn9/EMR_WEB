@@ -1,0 +1,68 @@
+/* @import "~@ng-select/ng-select/themes/default.theme.css"; */
+
+/* Zoom out 80% cho toàn bộ website */
+body {
+    -moz-transform: scale(0.9, 0.9); /* Moz-browsers */
+    zoom: 0.9; /* Other non-webkit browsers */
+    zoom: 90%; /* Webkit browsers */
+}
+.color-blue{
+    color: blue;
+}
+.content-wrapper, .main-header{
+    margin-left: 0px !important;
+}
+.card-custom{
+    background: rgb(250, 250, 250)  !important;
+    margin-top: 10px;
+}
+.form-control-sm{
+    font-weight: 500 !important; 
+}
+.form-background-custom-grey{
+    background-color: whitesmoke;
+}
+.row-margin-custom{
+    margin-top: 10px;
+}
+.col-form-label{
+    font-weight: 400 !important;
+    padding-top: 0 !important;
+    padding-right: 0px !important;
+    font-size: 13px !important;
+}
+.form-check-label{
+    font-size: 13px !important;
+}
+.tab-selected{
+    color: blue !important;
+    font-weight: 600 !important;
+}
+.form-group {
+    margin-bottom: 6px !important;
+}
+.col-form-label-itatlic{
+    font-style: italic !important;
+}
+.col-form-label-bold{
+    font-weight: 900 !important;
+}
+.col-form-label-algin{
+    text-align: center !important;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+
+ .modal{
+     top: 75px;
+ }
+ .label-input-padding{
+    padding: 5px;
+ }

@@ -1,0 +1,62 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+import { environment } from '@environments/environment';
+import { ThongTinHoSoBenhAn } from '@app/_models/EMR_MAIN/XemBenhAn/xemBenhAn';
+
+@Injectable({ providedIn: 'root' })
+export class EmrService {
+    ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
+    noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
+
+    constructor(private http: HttpClient) {}
+
+    GetDataBenhAnPromise(): Promise<any> {
+        return this.GetDataBenhAn().toPromise().then(
+            (data: any) => {
+                this.ThongTinHoSoBenhAn = data.Data;
+            },
+            error => {
+                console.error(error);
+            });
+    }
+    SetDataBenhAn(){
+        this.GetDataBenhAn().toPromise().then(
+            (data: any) => {
+                this.ThongTinHoSoBenhAn = data.Data;
+            },
+            error => {
+                console.error(error);
+            });
+    }
+    DaKhoiTao(): boolean{
+        return this.GetIdBenhAn() != null;
+    }
+    
+    GetIdBenhAn(): string{
+        return localStorage.getItem(`${environment.ID_BENH_AN}`)
+    }
+    
+    SetIdBenhAn(SESSION_ID: string){
+        localStorage.setItem(`${environment.ID_BENH_AN}`, SESSION_ID);
+    }
+
+    GetDataBenhAn(){
+        const SESSION_ID = this.GetIdBenhAn();
+        return this.http.get<ThongTinHoSoBenhAn>(`${environment.URL_EMR}/api/EMRWeb/DataBenhAnWebEMR/GetDataBenhAn?IDBenhAn=${SESSION_ID}`);
+    }
+
+    
+    BenhAnSave(ThongTinHoSoBenhAn: ThongTinHoSoBenhAn){
+        const SESSION_ID = this.GetIdBenhAn();
+        return this.http.post<any>(`${environment.URL_EMR}/api/BenhAn/Save?IDBenhAn=${SESSION_ID}`, ThongTinHoSoBenhAn);
+    }
+
+
+    PrintWebEMR(ThongTinHoSoBenhAn: ThongTinHoSoBenhAn, loaiDataIn: string){
+        const SESSION_ID = this.GetIdBenhAn();
+        return this.http.post<any>(`${environment.URL_EMR}/api/BenhAn/PrintWebEMR?IDBenhAn=${SESSION_ID}&loaiDataIn=${loaiDataIn}`, ThongTinHoSoBenhAn);
+    }
+
+}

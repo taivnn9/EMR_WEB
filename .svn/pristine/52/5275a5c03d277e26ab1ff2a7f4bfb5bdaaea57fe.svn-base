@@ -1,0 +1,40 @@
+import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { LoaiBenhAnEMR } from '@app/_models/EMR_MAIN/TrangBia/TrangBia';
+// import { ERMADO } from '@app/_models/ERMADO';
+import { EmrService } from '@app/_services/emr.service';
+import { KhamBenh_NoiTruYHCT } from './KhamBenh_NoiTruYHCT.component';
+
+@Component({ 
+    selector: 'KhamBenhBaseComponent',
+    template: `<ng-template #dynamicInsert></ng-template>`
+})
+export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
+    @ViewChild('dynamicInsert', { read: ViewContainerRef })
+    dynamicInsert: ViewContainerRef;
+
+    constructor(
+        private factoryResolver: ComponentFactoryResolver,
+        private emrService: EmrService,
+    ) { }
+    ngAfterViewInit(): void {
+        setTimeout(() => { 
+            switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
+                case LoaiBenhAnEMR.NoiTruYHCT:
+                    const componentFactory = this.factoryResolver.resolveComponentFactory(KhamBenh_NoiTruYHCT);
+        
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // this.dynamicInsert.createComponent(componentFactory);
+                    const dynamicComponent = <KhamBenh_NoiTruYHCT> this.dynamicInsert.createComponent(componentFactory).instance;
+                    // dynamicComponent.value = 10;
+                    break;
+                default:
+                    break;
+            }
+        }, 0);
+    }
+
+    ngOnInit() {
+        // Call data
+    }
+}
