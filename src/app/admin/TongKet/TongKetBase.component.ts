@@ -5,6 +5,7 @@ import { TongKet_DaLieu } from './TongKet_DaLieu.component';
 import { TongKet_NoiTruYHCT } from './TongKet_NoiTruYHCT.component';
 import { TongKet_NoiKhoa } from './TongKet_NoiKhoa.component';
 import { TongKet_BenhAnSanKhoa } from './TongKet_BenhAnSanKhoa.component';
+import { TongKet_RangHamMat } from './TongKet_RangHamMat.component';
 
 @Component({ 
     selector: 'TongKetBaseComponent',
@@ -38,21 +39,21 @@ export class TongKetBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(TongKet_BenhAnSanKhoa);
-        
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
-                    // this.dynamicInsert.createComponent(componentFactory);
                     const dynamicComponentSK = <TongKet_BenhAnSanKhoa> this.dynamicInsert.createComponent(componentFactorySK).instance;
-                    // dynamicComponent.value = 10;
                     break;
                 case LoaiBenhAnEMR.DaLieu:
                     const componentFactoryDaLieu = this.factoryResolver.resolveComponentFactory(TongKet_DaLieu);
-        
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
-                    // this.dynamicInsert.createComponent(componentFactory);
                     const dynamicComponentDaLieu = <TongKet_DaLieu> this.dynamicInsert.createComponent(componentFactoryDaLieu).instance;
-                    // dynamicComponent.value = 10;
+                    break;
+                case LoaiBenhAnEMR.RangHamMat:
+                    const componentFactoryRHM = this.factoryResolver.resolveComponentFactory(TongKet_RangHamMat);
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    const dynamicComponentRHM = <TongKet_RangHamMat> this.dynamicInsert.createComponent(componentFactoryRHM).instance;
                     break;
                 default:
                     break;

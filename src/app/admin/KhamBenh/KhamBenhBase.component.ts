@@ -6,6 +6,7 @@ import { KhamBenh_DaLieu } from './KhamBenh_DaLieu.component';
 import { KhamBenh_NoiTruYHCT } from './KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_NoiKhoa } from './KhamBenh_NoiKhoa.component';
 import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
+import { KhamBenh_RangHamMat } from './KhamBenh_RangHamMat.component';
 
 @Component({ 
     selector: 'KhamBenhBaseComponent',
@@ -20,6 +21,7 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
         private emrService: EmrService,
     ) { }
     ngAfterViewInit(): void {
+        debugger
         setTimeout(() => { 
             switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
                 case LoaiBenhAnEMR.NoiTruYHCT:
@@ -34,17 +36,20 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(KhamBenh_BenhAnSanKhoa);
-        
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
-                    // this.dynamicInsert.createComponent(componentFactory);
                     const dynamicComponentSK = <KhamBenh_BenhAnSanKhoa> this.dynamicInsert.createComponent(componentFactorySK).instance;
-                    // dynamicComponent.value = 10;
                     break;
                 case LoaiBenhAnEMR.DaLieu:
                     const componentFactoryDaLieu = this.factoryResolver.resolveComponentFactory(KhamBenh_DaLieu);
                     this.dynamicInsert.clear();
                     const dynamicComponentDaLieu = <KhamBenh_DaLieu> this.dynamicInsert.createComponent(componentFactoryDaLieu).instance;
+                    break;
+                case LoaiBenhAnEMR.RangHamMat:
+                    debugger
+                    const componentFactoryRHM = this.factoryResolver.resolveComponentFactory(KhamBenh_RangHamMat);
+                    this.dynamicInsert.clear();
+                    const dynamicComponentRHM = <KhamBenh_RangHamMat> this.dynamicInsert.createComponent(componentFactoryRHM).instance;
                     break;
                 default:
                     break;

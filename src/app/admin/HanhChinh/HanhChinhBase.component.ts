@@ -44,8 +44,8 @@ export class HanhChinhBaseComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        debugger
         setTimeout(() => {
+            debugger
             switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
                 case LoaiBenhAnEMR.NoiTruYHCT:
                     const componentFactory = this.factoryResolver.resolveComponentFactory(HanhChinh_NoiTruYHCT);
@@ -60,9 +60,13 @@ export class HanhChinhBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(HanhChinh_BenhAnSanKhoa);
-
                     this.dynamicInsert.clear();
                     this.dynamicComponent = <HanhChinh_BenhAnSanKhoa>this.dynamicInsert.createComponent(componentFactorySK).instance;
+                    break;
+                case LoaiBenhAnEMR.RangHamMat:
+                    const componentFactoryRHM = this.factoryResolver.resolveComponentFactory(HanhChinh_Base);
+                    this.dynamicInsert.clear();
+                    this.dynamicComponent = <HanhChinh_Base>this.dynamicInsert.createComponent(componentFactoryRHM).instance;
                     break;
                 default:
                     break;

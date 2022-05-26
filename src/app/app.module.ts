@@ -32,10 +32,13 @@ import { HanhChinh_NoiTruYHCT } from './admin/HanhChinh/HanhChinh_NoiTruYHCT.com
 import { HanhChinh_BenhAnSanKhoa } from './admin/HanhChinh/HanhChinh_BenhAnSanKhoa.component';
 import { HoiBenh_NoiTruYHCT } from './admin/HoiBenh/HoiBenh_NoiTruYHCT.component';
 import { HoiBenh_BenhAnSanKhoa } from './admin/HoiBenh/HoiBenh_BenhAnSanKhoa.component';
+import { HoiBenh_RangHamMat } from './admin/HoiBenh/HoiBenh_RangHamMat.component';
 import { KhamBenh_NoiTruYHCT } from './admin/KhamBenh/KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_BenhAnSanKhoa } from './admin/KhamBenh/KhamBenh_BenhAnSanKhoa.component';
+import { KhamBenh_RangHamMat } from './admin/KhamBenh/KhamBenh_RangHamMat.component';
 import { TongKet_NoiTruYHCT } from './admin/TongKet/TongKet_NoiTruYHCT.component';
 import { TongKet_BenhAnSanKhoa } from './admin/TongKet/TongKet_BenhAnSanKhoa.component';
+import { TongKet_RangHamMat } from './admin/TongKet/TongKet_RangHamMat.component';
 import { EmrService } from './_services/emr.service';
 import { PdfViewerComponent } from './public/pdfviewer/pdfviewer.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -79,6 +82,7 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     HoiBenh_NoiKhoa,
     HoiBenh_BenhAnSanKhoa,
     HoiBenh_DaLieu,
+    HoiBenh_RangHamMat,
     
 
     // Khám bệnh
@@ -86,12 +90,14 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     KhamBenh_NoiTruYHCT,
     KhamBenh_NoiKhoa,
     KhamBenh_BenhAnSanKhoa,
+    KhamBenh_RangHamMat,
     KhamBenh_DaLieu,
     // Tổng kết
     TongKetBaseComponent,
     TongKet_NoiTruYHCT,
     TongKet_NoiKhoa,
     TongKet_BenhAnSanKhoa,
+    TongKet_RangHamMat,
     TongKet_DaLieu,
 
     PdfViewerComponent,

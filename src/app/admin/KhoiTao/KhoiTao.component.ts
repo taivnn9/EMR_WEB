@@ -26,6 +26,7 @@ export class KhoiTaoComponent implements OnInit {
         });
     }
     async ngOnInit() {
+        debugger
         if(this.IDBenhAn != null){
             this.emrService.SetIdBenhAn(this.IDBenhAn);
             await this.emrService.SetDataBenhAn();
