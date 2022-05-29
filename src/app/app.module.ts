@@ -58,6 +58,8 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
 import { HoiBenh_Bong } from './admin/HoiBenh/HoiBenh_Bong.component';
 import { KhamBenh_Bong } from './admin/KhamBenh/KhamBenh_Bong.component';
 import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
+import { HoiBenh_Tim } from './admin/HoiBenh/HoiBenh_Tim.component';
+import { KhamBenh_Tim } from './admin/KhamBenh/KhamBenh_Tim.component';
 
 
 
@@ -83,6 +85,8 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     HoiBenh_BenhAnSanKhoa,
     HoiBenh_DaLieu,
     HoiBenh_Bong,
+    HoiBenh_Tim,
+    
     
 
     // Khám bệnh
@@ -92,6 +96,7 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     KhamBenh_BenhAnSanKhoa,
     KhamBenh_DaLieu,
     KhamBenh_Bong,
+    KhamBenh_Tim,
     // Tổng kết
     TongKetBaseComponent,
     TongKet_NoiTruYHCT,

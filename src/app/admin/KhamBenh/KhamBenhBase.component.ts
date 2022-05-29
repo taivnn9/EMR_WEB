@@ -7,6 +7,7 @@ import { KhamBenh_NoiTruYHCT } from './KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_NoiKhoa } from './KhamBenh_NoiKhoa.component';
 import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
 import { KhamBenh_Bong } from './KhamBenh_Bong.component';
+import { KhamBenh_Tim } from './KhamBenh_Tim.component';
 
 @Component({
     selector: 'KhamBenhBaseComponent',
@@ -54,6 +55,15 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
                     const dynamicComponentBong = <KhamBenh_Bong>this.dynamicInsert.createComponent(componentFactoryBong).instance;
+                    // dynamicComponent.value = 10;
+                    break;
+                    case LoaiBenhAnEMR.Tim:
+                    const componentFactoryTim = this.factoryResolver.resolveComponentFactory(KhamBenh_Tim);
+
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // this.dynamicInsert.createComponent(componentFactory);
+                    const dynamicComponentTim = <KhamBenh_Tim>this.dynamicInsert.createComponent(componentFactoryTim).instance;
                     // dynamicComponent.value = 10;
                     break;
                 default:

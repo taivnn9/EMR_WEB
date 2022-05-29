@@ -8,6 +8,7 @@ import { HoiBenh_NoiTruYHCT } from './HoiBenh_NoiTruYHCT.component';
 import { HoiBenh_NoiKhoa } from './HoiBenh_NoiKhoa.component';
 import { HoiBenh_BenhAnSanKhoa } from './HoiBenh_BenhAnSanKhoa.component';
 import { HoiBenh_Bong } from './HoiBenh_Bong.component';
+import { HoiBenh_Tim } from './HoiBenh_Tim.component';
 
 @Component({ 
     selector: 'HoiBenhBaseComponent',
@@ -62,6 +63,16 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                         const dynamicComponentBong = <HoiBenh_Bong> this.dynamicInsert.createComponent(componentFactoryBong).instance;
                         // dynamicComponent.value = 10;
                         break;
+                 case LoaiBenhAnEMR.Tim:
+                     const componentFactoryTim = this.factoryResolver.resolveComponentFactory(HoiBenh_Tim);
+                     
+                     console.log(this.dynamicInsert);
+                     this.dynamicInsert.clear();
+                      // this.dynamicInsert.createComponent(componentFactory);
+                      const dynamicComponentTim = <HoiBenh_Tim> this.dynamicInsert.createComponent(componentFactoryTim).instance;
+                      // dynamicComponent.value = 10;
+                      break;
+
                 default:
                     break;
             }
