@@ -6,8 +6,10 @@ import { KhamBenh_DaLieu } from './KhamBenh_DaLieu.component';
 import { KhamBenh_NoiTruYHCT } from './KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_NoiKhoa } from './KhamBenh_NoiKhoa.component';
 import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
+import { KhamBenh_ThanNhanTao } from './KhamBenh_ThanNhanTao.component';
+import {HoiBenh_ThanNhanTao} from "@app/admin/HoiBenh/HoiBenh_ThanNhanTao.component";
 
-@Component({ 
+@Component({
     selector: 'KhamBenhBaseComponent',
     template: `<ng-template #dynamicInsert></ng-template>`
 })
@@ -20,7 +22,7 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
         private emrService: EmrService,
     ) { }
     ngAfterViewInit(): void {
-        setTimeout(() => { 
+        setTimeout(() => {
             switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
                 case LoaiBenhAnEMR.NoiTruYHCT:
                     const componentFactoryNoiTruYHCT = this.factoryResolver.resolveComponentFactory(KhamBenh_NoiTruYHCT);
@@ -34,7 +36,7 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(KhamBenh_BenhAnSanKhoa);
-        
+
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
@@ -45,6 +47,11 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     const componentFactoryDaLieu = this.factoryResolver.resolveComponentFactory(KhamBenh_DaLieu);
                     this.dynamicInsert.clear();
                     const dynamicComponentDaLieu = <KhamBenh_DaLieu> this.dynamicInsert.createComponent(componentFactoryDaLieu).instance;
+                    break;
+                case LoaiBenhAnEMR.ThanNhanTao:
+                    const componentFactoryThanNhanTao = this.factoryResolver.resolveComponentFactory(KhamBenh_ThanNhanTao);
+                    this.dynamicInsert.clear();
+                    const dynamicComponentThanNhanTao = <KhamBenh_ThanNhanTao> this.dynamicInsert.createComponent(componentFactoryThanNhanTao).instance;
                     break;
                 default:
                     break;
