@@ -73,6 +73,8 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
 import { HoiBenh_Bong } from './admin/HoiBenh/HoiBenh_Bong.component';
 import { KhamBenh_Bong } from './admin/KhamBenh/KhamBenh_Bong.component';
 import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
+import { HoiBenh_Tim } from './admin/HoiBenh/HoiBenh_Tim.component';
+import { KhamBenh_Tim } from './admin/KhamBenh/KhamBenh_Tim.component';
 
 
 
@@ -101,7 +103,9 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     HoiBenh_DaLieu,
     HoiBenh_ThanNhanTao,
     HoiBenh_Bong,
+    HoiBenh_Tim,
     HoiBenh_NgoaiTruYHCT,
+
 
     // Khám bệnh
     KhamBenhBaseComponent,
@@ -111,7 +115,9 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     KhamBenh_DaLieu,
     KhamBenh_ThanNhanTao,
     KhamBenh_Bong,
+    KhamBenh_Tim,
     KhamBenh_NgoaiTruYHCT,
+
 
     // Tổng kết
     TongKetBaseComponent,
@@ -123,6 +129,7 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     TongKet_Bong,
     TongKet_NgoaiTruYHCT,
 
+    
     PdfViewerComponent,
     VirtualScrollExampleComponent,
     DataSourceBackendExampleComponent,

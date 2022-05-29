@@ -9,6 +9,7 @@ import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
 import { KhamBenh_ThanNhanTao } from './KhamBenh_ThanNhanTao.component';
 import {HoiBenh_ThanNhanTao} from "@app/admin/HoiBenh/HoiBenh_ThanNhanTao.component";
 import { KhamBenh_Bong } from './KhamBenh_Bong.component';
+import { KhamBenh_Tim } from './KhamBenh_Tim.component';
 import { KhamBenh_NgoaiTruYHCT } from './KhamBenh_NgoaiTruYHCT.component';
 
 @Component({
@@ -38,7 +39,6 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(KhamBenh_BenhAnSanKhoa);
-
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
@@ -52,16 +52,21 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.Bong:
                     const componentFactoryBong = this.factoryResolver.resolveComponentFactory(KhamBenh_Bong);
-
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
                     const dynamicComponentBong = <KhamBenh_Bong>this.dynamicInsert.createComponent(componentFactoryBong).instance;
                     // dynamicComponent.value = 10;
                     break;
+                case LoaiBenhAnEMR.Tim:
+                    const componentFactoryTim = this.factoryResolver.resolveComponentFactory(KhamBenh_Tim);
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // this.dynamicInsert.createComponent(componentFactory);
+                    const dynamicComponentTim = <KhamBenh_Tim>this.dynamicInsert.createComponent(componentFactoryTim).instance;
+                    // dynamicComponent.value = 10;
                 case LoaiBenhAnEMR.NgoaiTruYHCT:
                     const componentFactoryNgoaiTru = this.factoryResolver.resolveComponentFactory(KhamBenh_NgoaiTruYHCT);
-
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // tslint:disable-next-line:max-line-length
