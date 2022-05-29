@@ -1,0 +1,461 @@
+<!-- Content Wrapper. Contains page content -->
+
+
+<!-- Main content -->
+<section class="content" xmlns="http://www.w3.org/1999/html">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-primary card-outline card-custom">
+          <!-- <div class="card-header">
+              <h3 class="card-title"></h3>
+            </div> -->
+          <div class="row">
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <!-- THĂM KHÁM KHI VÀO VIỆN -->
+                <div class="form-group row">
+                  <label class="col-12 col-form-label col-form-label-bold">THĂM KHÁM KHI VÀO VIỆN</label>
+                </div>
+                <div class="form-group row">
+                  <label class="col-12 col-form-label col-form-label-bold">1. Toàn thân:</label>
+                </div>
+                <!--  -->
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Thể trạng : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                    [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.TheTrang" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Da, niêm mạc : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DaNiemMac" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Mạch : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DauSinhTon.Mach" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Huyết áp : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DauSinhTon.HuyetAp" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row">
+                  <div class="col-12"></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-12"></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Ý thức : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.YThuc" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Cân nặng : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DauSinhTon.CanNang" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Nhiệt độ : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DauSinhTon.NhietDo" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Nhịp thở : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.NhipTho" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row">
+                  <label class="col-12 col-form-label col-form-label-bold">2. Tiết niệu:</label>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-3">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="DaiMauID">Đái máu: </label>
+                      <input type="checkbox" class="form-check-input col-6"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DaiMau" [ngModelOptions]="{standalone: true}" id="DaiMauID">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="DaiDucID">Đái đục: </label>
+                      <input type="checkbox" class="form-check-input col-6"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DaiDuc" [ngModelOptions]="{standalone: true}" id="DaiDucID">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="DaiRaHBID">Đái ra Hb: </label>
+                      <input type="checkbox" class="form-check-input col-6"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DaiRaHB" [ngModelOptions]="{standalone: true}" id="DaiRaHBID">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="DaiDatID">Đái dắt: </label>
+                      <input type="checkbox" class="form-check-input col-6"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DaiRat" [ngModelOptions]="{standalone: true}" id="DaiDatID">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                  <div class="form-group row">
+                    <div class="col-12"></div><br>
+                  </div>
+
+                <div class="form-group row">
+                  <div class="col-3">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="DaiBuotID">Đái buốt: </label>
+                      <input type="checkbox" class="form-check-input col-6"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DaiBuot" [ngModelOptions]="{standalone: true}" id="DaiBuotID">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="ConDauQuanThanID">Cơn đau quặn thận: </label>
+                      <input type="checkbox" class="form-check-input col-6"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_ConDauQuanThan" [ngModelOptions]="{standalone: true}" id="ConDauQuanThanID">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="ThanToID">Thận to: </label>
+                      <input type="checkbox" class="form-check-input col-6"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_ThanTo" [ngModelOptions]="{standalone: true}" id="ThanToID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <label class="col-12 col-form-label col-form-label-bold">3. Hội chứng thừa nước:</label>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="PhuID">Phù : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_Phu" [ngModelOptions]="{standalone: true}" id="PhuID">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="DTranDichMangBungID">Tràn dịch màng bụng : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_TranDichMangBung" [ngModelOptions]="{standalone: true}" id="DTranDichMangBungID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <div></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="TranDichMangPhoiID">Tràn dịch màng phổi : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_TranDichMangPhoi" [ngModelOptions]="{standalone: true}" id="TranDichMangPhoiID">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="TranDichMangTimID">Tràn dịch màng tim : </label>
+                      <input type="checkbox" class="form-check-input col-4"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_TranDichMangTim" [ngModelOptions]="{standalone: true}" id="TranDichMangTimID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+<!--            //tim mạch-->
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <label class="col-12 col-form-label col-form-label-bold">4. Tim mạch:</label>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Nhịp tim : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.NhipTim" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Tiếng thổi : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.TiengThoi" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <div></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Loại nhịp : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.LoaiNhipTim" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Suy tim : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.SuyTim" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+<!--            //hô hấp-->
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <label class="col-12 col-form-label col-form-label-bold">5. Hô hấp:</label>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Nhịp thở : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DauSinhTon.NhipTho" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Rales ở phổi : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.RalesOPhoi" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <div></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Kiểu thở : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.KieuTho" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-2 col-form-label"></label>
+                  <div class="col-10">
+                    <div class="form-group row">
+
+                      <div class="col-6">
+                        <div class="form-check row">
+                          <label class="form-check-label col-4" for="DauHieuKhoThoID">Dấu hiệu khó thở :</label>
+                          <input type="checkbox" class="form-check-input col-1"
+                                 [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DauHieuKhoTho" [ngModelOptions]="{standalone: true}" id="DauHieuKhoThoID">
+                        </div>
+                      </div>
+
+                      <div class="col-6">
+                        <div class="form-check row">
+                          <label class="form-check-label col-4" for="DauHieuPhuPhoiID">Dấu hiệu phù phổi : </label>
+                          <input type="checkbox" class="form-check-input col-1"
+                                 [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DauHieuPhuPhoi" [ngModelOptions]="{standalone: true}" id="DauHieuPhuPhoiID">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+<!--            //tiêu hóa-->
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+
+                <div class="form-group row row">
+                  <label class="col-12 col-form-label col-form-label-bold">6. Tiêu hóa:</label>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="VangDaID">Vàng da : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_VangDa" [ngModelOptions]="{standalone: true}" id="VangDaID">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="GanToID">Gan to : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_GanTo" [ngModelOptions]="{standalone: true}" id="GanToID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+
+                <div class="form-group row row">
+                  <br>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="VangMatID">Vàng mắt : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_VangMat" [ngModelOptions]="{standalone: true}" id="VangMatID">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="LachToID">Lách to : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_Is_LachTo" [ngModelOptions]="{standalone: true}" id="LachToID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+<!--            //chẩy máu-->
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+
+                <div class="form-group row row">
+                  <label class="col-12 col-form-label col-form-label-bold">7. Triệu chứng chẩy máu :</label>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="NonMauID">Nôn máu : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_NonMau" [ngModelOptions]="{standalone: true}" id="NonMauID">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-4" for="DiNgoaiPhanDenID">Đi ngoài phân đen : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_DiNgoaiPhanDen" [ngModelOptions]="{standalone: true}" id="DiNgoaiPhanDenID">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+
+                <div class="form-group row row">
+                  <br>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-6">
+                    <div class="form-check row">
+                      <label class="form-check-label col-6" for="XuatHuyetDuoiDaVaNiemMacID">Xuất huyết dưới da và niêm mạc : </label>
+                      <input type="checkbox" class="form-check-input col-2"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_XuatHuyetDuoiDaVaNiemMac" [ngModelOptions]="{standalone: true}" id="XuatHuyetDuoiDaVaNiemMacID">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

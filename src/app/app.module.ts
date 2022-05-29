@@ -30,6 +30,15 @@ import { MainWindowComponent } from './admin/MainWindow';
 import { HanhChinhBaseComponent } from './admin/HanhChinh/HanhChinhBase.component';
 import { HanhChinh_NoiTruYHCT } from './admin/HanhChinh/HanhChinh_NoiTruYHCT.component';
 import { HanhChinh_BenhAnSanKhoa } from './admin/HanhChinh/HanhChinh_BenhAnSanKhoa.component';
+
+import { HanhChinh_ThanNhanTao } from './admin/HanhChinh/HanhChinh_ThanNhanTao.component';
+import { HoiBenh_NoiTruYHCT } from './admin/HoiBenh/HoiBenh_NoiTruYHCT.component';
+import { HoiBenh_BenhAnSanKhoa } from './admin/HoiBenh/HoiBenh_BenhAnSanKhoa.component';
+import { HoiBenh_ThanNhanTao } from './admin/HoiBenh/HoiBenh_ThanNhanTao.component';
+import { KhamBenh_NoiTruYHCT } from './admin/KhamBenh/KhamBenh_NoiTruYHCT.component';
+import { KhamBenh_BenhAnSanKhoa } from './admin/KhamBenh/KhamBenh_BenhAnSanKhoa.component';
+import { KhamBenh_ThanNhanTao } from './admin/KhamBenh/KhamBenh_ThanNhanTao.component';
+
 import { HanhChinh_NgoaiTruYHCT } from './admin/HanhChinh/HanhChinh_NgoaiTruYHCT.component';
 import { HoiBenh_NoiTruYHCT } from './admin/HoiBenh/HoiBenh_NoiTruYHCT.component';
 import { HoiBenh_BenhAnSanKhoa } from './admin/HoiBenh/HoiBenh_BenhAnSanKhoa.component';
@@ -37,6 +46,7 @@ import { HoiBenh_NgoaiTruYHCT } from './admin/HoiBenh/HoiBenh_NgoaiTruYHCT.compo
 import { KhamBenh_NoiTruYHCT } from './admin/KhamBenh/KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_BenhAnSanKhoa } from './admin/KhamBenh/KhamBenh_BenhAnSanKhoa.component';
 import { KhamBenh_NgoaiTruYHCT } from './admin/KhamBenh/KhamBenh_NgoaiTruYHCT.component';
+
 import { TongKet_NoiTruYHCT } from './admin/TongKet/TongKet_NoiTruYHCT.component';
 import { TongKet_BenhAnSanKhoa } from './admin/TongKet/TongKet_BenhAnSanKhoa.component';
 import { TongKet_NgoaiTruYHCT } from './admin/TongKet/TongKet_NgoaiTruYHCT.component';
@@ -57,6 +67,7 @@ import { HoiBenh_NoiKhoa } from './admin/HoiBenh/HoiBenh_NoiKhoa.component';
 import { KhamBenh_NoiKhoa } from './admin/KhamBenh/KhamBenh_NoiKhoa.component';
 import { TongKet_NoiKhoa } from './admin/TongKet/TongKet_NoiKhoa.component';
 import { TongKet_DaLieu } from './admin/TongKet/TongKet_DaLieu.component';
+import { TongKet_ThanNhanTao } from './admin/TongKet/TongKet_ThanNhanTao.component';
 import { KhamBenh_DaLieu } from './admin/KhamBenh/KhamBenh_DaLieu.component';
 import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
 import { HoiBenh_Bong } from './admin/HoiBenh/HoiBenh_Bong.component';
@@ -78,6 +89,7 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     HanhChinh_NoiTruYHCT,
     HanhChinh_Base,
     HanhChinh_BenhAnSanKhoa,
+    HanhChinh_ThanNhanTao,
     HanhChinh_NgoaiTruYHCT,
 
 
@@ -87,6 +99,7 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     HoiBenh_NoiKhoa,
     HoiBenh_BenhAnSanKhoa,
     HoiBenh_DaLieu,
+    HoiBenh_ThanNhanTao,
     HoiBenh_Bong,
     HoiBenh_NgoaiTruYHCT,
 
@@ -96,6 +109,7 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     KhamBenh_NoiKhoa,
     KhamBenh_BenhAnSanKhoa,
     KhamBenh_DaLieu,
+    KhamBenh_ThanNhanTao,
     KhamBenh_Bong,
     KhamBenh_NgoaiTruYHCT,
 
@@ -105,6 +119,7 @@ import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
     TongKet_NoiKhoa,
     TongKet_BenhAnSanKhoa,
     TongKet_DaLieu,
+    TongKet_ThanNhanTao,
     TongKet_Bong,
     TongKet_NgoaiTruYHCT,
 

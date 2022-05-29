@@ -6,6 +6,8 @@ import { KhamBenh_DaLieu } from './KhamBenh_DaLieu.component';
 import { KhamBenh_NoiTruYHCT } from './KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_NoiKhoa } from './KhamBenh_NoiKhoa.component';
 import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
+import { KhamBenh_ThanNhanTao } from './KhamBenh_ThanNhanTao.component';
+import {HoiBenh_ThanNhanTao} from "@app/admin/HoiBenh/HoiBenh_ThanNhanTao.component";
 import { KhamBenh_Bong } from './KhamBenh_Bong.component';
 import { KhamBenh_NgoaiTruYHCT } from './KhamBenh_NgoaiTruYHCT.component';
 
@@ -64,6 +66,11 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     // tslint:disable-next-line:max-line-length
                     const dynamicComponentNgoaiTru = <KhamBenh_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactoryNgoaiTru).instance;
+                    break;
+                case LoaiBenhAnEMR.ThanNhanTao:
+                    const componentFactoryThanNhanTao = this.factoryResolver.resolveComponentFactory(KhamBenh_ThanNhanTao);
+                    this.dynamicInsert.clear();
+                    const dynamicComponentThanNhanTao = <KhamBenh_ThanNhanTao> this.dynamicInsert.createComponent(componentFactoryThanNhanTao).instance;
                     break;
                 default:
                     break;
