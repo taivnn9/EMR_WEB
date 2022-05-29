@@ -7,7 +7,9 @@ import { HoiBenh_DaLieu } from './HoiBenh_DaLieu.component';
 import { HoiBenh_NoiTruYHCT } from './HoiBenh_NoiTruYHCT.component';
 import { HoiBenh_NoiKhoa } from './HoiBenh_NoiKhoa.component';
 import { HoiBenh_BenhAnSanKhoa } from './HoiBenh_BenhAnSanKhoa.component';
+import { HoiBenh_Bong } from './HoiBenh_Bong.component';
 import { HoiBenh_NgoaiTruYHCT } from './HoiBenh_NgoaiTruYHCT.component';
+
 
 @Component({
     selector: 'HoiBenhBaseComponent',
@@ -53,6 +55,16 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     const dynamicComponent_DaLieu = <HoiBenh_DaLieu> this.dynamicInsert.createComponent(componentFactory_DaLieu).instance;
                     break;
+
+                case LoaiBenhAnEMR.Bong:
+                        const componentFactoryBong = this.factoryResolver.resolveComponentFactory(HoiBenh_Bong);
+            
+                        console.log(this.dynamicInsert);
+                        this.dynamicInsert.clear();
+                        // this.dynamicInsert.createComponent(componentFactory);
+                        const dynamicComponentBong = <HoiBenh_Bong> this.dynamicInsert.createComponent(componentFactoryBong).instance;
+                        // dynamicComponent.value = 10;
+                        break;
                 case LoaiBenhAnEMR.NgoaiTruYHCT:
                     const componentFactory_NgoaiTruYHCT = this.factoryResolver.resolveComponentFactory(HoiBenh_NgoaiTruYHCT);
 

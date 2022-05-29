@@ -59,6 +59,9 @@ import { TongKet_NoiKhoa } from './admin/TongKet/TongKet_NoiKhoa.component';
 import { TongKet_DaLieu } from './admin/TongKet/TongKet_DaLieu.component';
 import { KhamBenh_DaLieu } from './admin/KhamBenh/KhamBenh_DaLieu.component';
 import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
+import { HoiBenh_Bong } from './admin/HoiBenh/HoiBenh_Bong.component';
+import { KhamBenh_Bong } from './admin/KhamBenh/KhamBenh_Bong.component';
+import { TongKet_Bong } from './admin/TongKet/TongKet_Bong.component';
 
 
 
@@ -84,6 +87,7 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     HoiBenh_NoiKhoa,
     HoiBenh_BenhAnSanKhoa,
     HoiBenh_DaLieu,
+    HoiBenh_Bong,
     HoiBenh_NgoaiTruYHCT,
 
     // Khám bệnh
@@ -92,6 +96,7 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     KhamBenh_NoiKhoa,
     KhamBenh_BenhAnSanKhoa,
     KhamBenh_DaLieu,
+    KhamBenh_Bong,
     KhamBenh_NgoaiTruYHCT,
 
     // Tổng kết
@@ -100,6 +105,7 @@ import { HoiBenh_DaLieu } from './admin/HoiBenh/HoiBenh_DaLieu.component';
     TongKet_NoiKhoa,
     TongKet_BenhAnSanKhoa,
     TongKet_DaLieu,
+    TongKet_Bong,
     TongKet_NgoaiTruYHCT,
 
     PdfViewerComponent,
