@@ -6,8 +6,9 @@ import { KhamBenh_DaLieu } from './KhamBenh_DaLieu.component';
 import { KhamBenh_NoiTruYHCT } from './KhamBenh_NoiTruYHCT.component';
 import { KhamBenh_NoiKhoa } from './KhamBenh_NoiKhoa.component';
 import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
+import { KhamBenh_NgoaiTruYHCT } from './KhamBenh_NgoaiTruYHCT.component';
 
-@Component({ 
+@Component({
     selector: 'KhamBenhBaseComponent',
     template: `<ng-template #dynamicInsert></ng-template>`
 })
@@ -20,7 +21,7 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
         private emrService: EmrService,
     ) { }
     ngAfterViewInit(): void {
-        setTimeout(() => { 
+        setTimeout(() => {
             switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
                 case LoaiBenhAnEMR.NoiTruYHCT:
                     const componentFactoryNoiTruYHCT = this.factoryResolver.resolveComponentFactory(KhamBenh_NoiTruYHCT);
@@ -34,7 +35,7 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(KhamBenh_BenhAnSanKhoa);
-        
+
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
@@ -45,6 +46,14 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     const componentFactoryDaLieu = this.factoryResolver.resolveComponentFactory(KhamBenh_DaLieu);
                     this.dynamicInsert.clear();
                     const dynamicComponentDaLieu = <KhamBenh_DaLieu> this.dynamicInsert.createComponent(componentFactoryDaLieu).instance;
+                    break;
+                case LoaiBenhAnEMR.NgoaiTruYHCT:
+                    const componentFactoryNgoaiTru = this.factoryResolver.resolveComponentFactory(KhamBenh_NgoaiTruYHCT);
+
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // tslint:disable-next-line:max-line-length
+                    const dynamicComponentNgoaiTru = <KhamBenh_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactoryNgoaiTru).instance;
                     break;
                 default:
                     break;
