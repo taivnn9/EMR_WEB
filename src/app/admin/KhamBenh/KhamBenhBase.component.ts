@@ -8,6 +8,8 @@ import { KhamBenh_NoiKhoa } from './KhamBenh_NoiKhoa.component';
 import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
 import { KhamBenh_ThanNhanTao } from './KhamBenh_ThanNhanTao.component';
 import {HoiBenh_ThanNhanTao} from "@app/admin/HoiBenh/HoiBenh_ThanNhanTao.component";
+import { KhamBenh_Bong } from './KhamBenh_Bong.component';
+import { KhamBenh_NgoaiTruYHCT } from './KhamBenh_NgoaiTruYHCT.component';
 
 @Component({
     selector: 'KhamBenhBaseComponent',
@@ -27,12 +29,12 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                 case LoaiBenhAnEMR.NoiTruYHCT:
                     const componentFactoryNoiTruYHCT = this.factoryResolver.resolveComponentFactory(KhamBenh_NoiTruYHCT);
                     this.dynamicInsert.clear();
-                    const dynamicComponentNoiTruYHCT = <KhamBenh_NoiTruYHCT> this.dynamicInsert.createComponent(componentFactoryNoiTruYHCT).instance;
+                    const dynamicComponentNoiTruYHCT = <KhamBenh_NoiTruYHCT>this.dynamicInsert.createComponent(componentFactoryNoiTruYHCT).instance;
                     break;
                 case LoaiBenhAnEMR.NoiKhoa:
                     const componentFactory_NoiKhoa = this.factoryResolver.resolveComponentFactory(KhamBenh_NoiKhoa);
                     this.dynamicInsert.clear();
-                    const dynamicComponentNoiKhoa = <KhamBenh_NoiKhoa> this.dynamicInsert.createComponent(componentFactory_NoiKhoa).instance;
+                    const dynamicComponentNoiKhoa = <KhamBenh_NoiKhoa>this.dynamicInsert.createComponent(componentFactory_NoiKhoa).instance;
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(KhamBenh_BenhAnSanKhoa);
@@ -40,13 +42,30 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
-                    const dynamicComponentSK = <KhamBenh_BenhAnSanKhoa> this.dynamicInsert.createComponent(componentFactorySK).instance;
+                    const dynamicComponentSK = <KhamBenh_BenhAnSanKhoa>this.dynamicInsert.createComponent(componentFactorySK).instance;
                     // dynamicComponent.value = 10;
                     break;
                 case LoaiBenhAnEMR.DaLieu:
                     const componentFactoryDaLieu = this.factoryResolver.resolveComponentFactory(KhamBenh_DaLieu);
                     this.dynamicInsert.clear();
-                    const dynamicComponentDaLieu = <KhamBenh_DaLieu> this.dynamicInsert.createComponent(componentFactoryDaLieu).instance;
+                    const dynamicComponentDaLieu = <KhamBenh_DaLieu>this.dynamicInsert.createComponent(componentFactoryDaLieu).instance;
+                    break;
+                case LoaiBenhAnEMR.Bong:
+                    const componentFactoryBong = this.factoryResolver.resolveComponentFactory(KhamBenh_Bong);
+
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // this.dynamicInsert.createComponent(componentFactory);
+                    const dynamicComponentBong = <KhamBenh_Bong>this.dynamicInsert.createComponent(componentFactoryBong).instance;
+                    // dynamicComponent.value = 10;
+                    break;
+                case LoaiBenhAnEMR.NgoaiTruYHCT:
+                    const componentFactoryNgoaiTru = this.factoryResolver.resolveComponentFactory(KhamBenh_NgoaiTruYHCT);
+
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // tslint:disable-next-line:max-line-length
+                    const dynamicComponentNgoaiTru = <KhamBenh_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactoryNgoaiTru).instance;
                     break;
                 case LoaiBenhAnEMR.ThanNhanTao:
                     const componentFactoryThanNhanTao = this.factoryResolver.resolveComponentFactory(KhamBenh_ThanNhanTao);
