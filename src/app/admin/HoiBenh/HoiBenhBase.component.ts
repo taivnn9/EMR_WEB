@@ -7,10 +7,13 @@ import { HoiBenh_DaLieu } from './HoiBenh_DaLieu.component';
 import { HoiBenh_NoiTruYHCT } from './HoiBenh_NoiTruYHCT.component';
 import { HoiBenh_NoiKhoa } from './HoiBenh_NoiKhoa.component';
 import { HoiBenh_BenhAnSanKhoa } from './HoiBenh_BenhAnSanKhoa.component';
+import { HoiBenh_ThanNhanTao } from './HoiBenh_ThanNhanTao.component';
 import { HoiBenh_Bong } from './HoiBenh_Bong.component';
 import { HoiBenh_Tim } from './HoiBenh_Tim.component';
+import { HoiBenh_NgoaiTruYHCT } from './HoiBenh_NgoaiTruYHCT.component';
 
-@Component({ 
+
+@Component({
     selector: 'HoiBenhBaseComponent',
     template: `<ng-template #dynamicInsert></ng-template>`
 })
@@ -24,11 +27,11 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
     ) { }
     ngAfterViewInit(): void {
         setTimeout(() => {
-            
+
             switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
                 case LoaiBenhAnEMR.NoiTruYHCT:
                     const componentFactory_NoiTruYHCT = this.factoryResolver.resolveComponentFactory(HoiBenh_NoiTruYHCT);
-        
+
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
@@ -42,7 +45,7 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(HoiBenh_BenhAnSanKhoa);
-        
+
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
@@ -54,29 +57,41 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     const dynamicComponent_DaLieu = <HoiBenh_DaLieu> this.dynamicInsert.createComponent(componentFactory_DaLieu).instance;
                     break;
+                case LoaiBenhAnEMR.ThanNhanTao:
+                    const componentFactory_ThanNhanTao = this.factoryResolver.resolveComponentFactory(HoiBenh_ThanNhanTao);
+                    this.dynamicInsert.clear();
+                    const dynamicComponent_ThanNhanTao = <HoiBenh_ThanNhanTao> this.dynamicInsert.createComponent(componentFactory_ThanNhanTao).instance;
+                    break;
                 case LoaiBenhAnEMR.Bong:
-                        const componentFactoryBong = this.factoryResolver.resolveComponentFactory(HoiBenh_Bong);
-            
-                        console.log(this.dynamicInsert);
-                        this.dynamicInsert.clear();
-                        // this.dynamicInsert.createComponent(componentFactory);
-                        const dynamicComponentBong = <HoiBenh_Bong> this.dynamicInsert.createComponent(componentFactoryBong).instance;
-                        // dynamicComponent.value = 10;
-                        break;
-                 case LoaiBenhAnEMR.Tim:
-                     const componentFactoryTim = this.factoryResolver.resolveComponentFactory(HoiBenh_Tim);
-                     
-                     console.log(this.dynamicInsert);
-                     this.dynamicInsert.clear();
-                      // this.dynamicInsert.createComponent(componentFactory);
-                      const dynamicComponentTim = <HoiBenh_Tim> this.dynamicInsert.createComponent(componentFactoryTim).instance;
-                      // dynamicComponent.value = 10;
-                      break;
+                    const componentFactoryBong = this.factoryResolver.resolveComponentFactory(HoiBenh_Bong);
 
+                    console.log(this.dynamicInsert);
+                    this.dynamicInsert.clear();
+                    // this.dynamicInsert.createComponent(componentFactory);
+                    const dynamicComponentBong = <HoiBenh_Bong> this.dynamicInsert.createComponent(componentFactoryBong).instance;
+                    // dynamicComponent.value = 10;
+                    break;
+                 case LoaiBenhAnEMR.Tim:
+                   const componentFactoryTim = this.factoryResolver.resolveComponentFactory(HoiBenh_Tim);
+
+                   console.log(this.dynamicInsert);
+                   this.dynamicInsert.clear();
+                    // this.dynamicInsert.createComponent(componentFactory);
+                    const dynamicComponentTim = <HoiBenh_Tim> this.dynamicInsert.createComponent(componentFactoryTim).instance;
+                    // dynamicComponent.value = 10;
+                    break;
+                case LoaiBenhAnEMR.NgoaiTruYHCT:
+                    const componentFactory_NgoaiTruYHCT = this.factoryResolver.resolveComponentFactory(HoiBenh_NgoaiTruYHCT);
+
+                    this.dynamicInsert.clear();
+                    // @ts-ignore
+                    // tslint:disable-next-line:max-line-length
+                    const dynamicComponent_NgoaiTruYHCT = <HoiBenh_NgoaiTruYHCT>this.dynamicInsert.createComponent(componentFactory_NgoaiTruYHCT).instance;
+                    break;
                 default:
                     break;
             }
-        
+
         }, 0);
 
     }

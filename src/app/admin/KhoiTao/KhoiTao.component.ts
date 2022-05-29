@@ -18,7 +18,7 @@ export class KhoiTaoComponent implements OnInit {
         this.activeRoute.queryParams.subscribe(params => {
 
             if (params && params[`${environment.IDBenhAn}`]) {
-                debugger
+                // debugger
                 localStorage.clear();
                 this.IDBenhAn = params[`${environment.IDBenhAn}`]
             }
