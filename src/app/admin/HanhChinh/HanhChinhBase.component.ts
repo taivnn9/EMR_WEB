@@ -81,6 +81,9 @@ export class HanhChinhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicComponent = <HanhChinh_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactory_NgoaiTruYHCT).instance;
                     break;
                 default:
+                    const componentFactory_Default= this.factoryResolver.resolveComponentFactory(HanhChinh_Base);
+                    this.dynamicInsert.clear();
+                    this.dynamicComponent = <HanhChinh_Base>this.dynamicInsert.createComponent(componentFactory_Default).instance;
                     break;
             }
         }, 0);

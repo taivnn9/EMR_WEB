@@ -29,7 +29,7 @@ export class HoiBenh_DaLieu implements OnInit {
 
     
     doCommand(command: number) {
-        console.log(`HoiBenh_NoiTruYHCT đã nhận được lệnh ${command}`);
+        console.log(`HoiBenh_DaLieu đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()

@@ -72,7 +72,7 @@ export class MainWindowComponent implements OnInit {
         // Lắng nghe lệnh lưu gửi trả về từ component con
         this.sharedService.commandSave$.subscribe(
             (commandData: CommandData) => {
-                // console.log(commandData);
+                console.log(commandData);
 
                 // Chỉ lưu phiếu đang mở
                 const href = this.router.url;
@@ -111,6 +111,7 @@ export class MainWindowComponent implements OnInit {
 
     
     announceCommand(command: any) {
+        console.log(`MainWindowComponent announceCommand`, command);
         this.sharedService.announceCommand(`${command}`);
     }
     save(ThongTinHoSoBenhAn: ThongTinHoSoBenhAn){

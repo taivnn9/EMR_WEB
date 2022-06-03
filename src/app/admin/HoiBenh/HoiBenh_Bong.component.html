@@ -69,54 +69,55 @@
                   <div class="col-3">
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" 
-                      [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DiUng" 
+                      [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.DiUng" 
+                      (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DiUng = $event" 
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhDiUng">
                       <label class="form-check-label" for="DacDiemLienQuanBenhDiUng">Dị ứng</label>
                     </div>
                   </div>
                   <div class="col-3">
                     <input class="form-control form-control-sm" type="text" 
-                    [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DiUng_Text" [ngModelOptions]="{standalone: true}" 
+                    [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.DiUng_Text" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DiUng_Text = $event"  [ngModelOptions]="{standalone: true}" 
                     placeholder="">
                   </div>
                   <div class="col-3">
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" 
-                      [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLa" 
+                      [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLa" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLa= $event"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhThuocLa">
                       <label class="form-check-label" for="DacDiemLienQuanBenhThuocLa">Thuốc lá</label>
                     </div>
                   </div>
                   <div class="col-3">
                     <input class="form-control form-control-sm" type="text" 
-                    [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLa_Text" [ngModelOptions]="{standalone: true}" 
+                    [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLa_Text" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLa_Text= $event"  [ngModelOptions]="{standalone: true}" 
                     placeholder="">
                   </div>
                   <!--  -->
                   <div class="col-3">
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" 
-                      [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.MaTuy" 
+                      [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.MaTuy" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.MaTuy= $event"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhMaTuy">
                       <label class="form-check-label" for="DacDiemLienQuanBenhMaTuy">Ma túy</label>
                     </div>
                   </div>
                   <div class="col-3">
                     <input class="form-control form-control-sm" type="text" 
-                    [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.MaTuy_Text" [ngModelOptions]="{standalone: true}" 
+                    [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.MaTuy_Text" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.MaTuy_Text= $event"  [ngModelOptions]="{standalone: true}" 
                     placeholder="">
                   </div>
                   <div class="col-3">
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" 
-                      [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLao" 
+                      [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLao" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLao= $event"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhThuocLao">
                       <label class="form-check-label" for="DacDiemLienQuanBenhThuocLao">Thuốc lào</label>
                     </div>
                   </div>
                   <div class="col-3">
                     <input class="form-control form-control-sm" type="text" 
-                    [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLao_Text" [ngModelOptions]="{standalone: true}" 
+                    [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLao_Text" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLao_Text= $event"  [ngModelOptions]="{standalone: true}" 
                     placeholder="">
                   </div>
 
@@ -124,27 +125,27 @@
                   <div class="col-3">
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" 
-                      [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RuouBia" 
+                      [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.RuouBia" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RuouBia= $event"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhRuouBia">
                       <label class="form-check-label" for="DacDiemLienQuanBenhRuouBia">Rượu bia</label>
                     </div>
                   </div>
                   <div class="col-3">
                     <input class="form-control form-control-sm" type="text" 
-                    [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RuouBia_Text" [ngModelOptions]="{standalone: true}" 
+                    [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.RuouBia_Text" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RuouBia_Text= $event"  [ngModelOptions]="{standalone: true}" 
                     placeholder="">
                   </div>
                   <div class="col-3">
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" 
-                      [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.Khac_DacDiemLienQuanBenh" 
+                      [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.Khac_DacDiemLienQuanBenh" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.Khac_DacDiemLienQuanBenh= $event"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhKhac_DacDiemLienQuanBenh">
                       <label class="form-check-label" for="DacDiemLienQuanBenhKhac_DacDiemLienQuanBenh">Khác</label>
                     </div>
                   </div>
                   <div class="col-3">
                     <input class="form-control form-control-sm" type="text" 
-                    [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.Khac_DacDiemLienQuanBenh_Text" [ngModelOptions]="{standalone: true}" 
+                    [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.Khac_DacDiemLienQuanBenh_Text" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.Khac_DacDiemLienQuanBenh_Text= $event"  [ngModelOptions]="{standalone: true}" 
                     placeholder="">
                   </div>
 

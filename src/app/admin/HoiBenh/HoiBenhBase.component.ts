@@ -11,6 +11,8 @@ import { HoiBenh_ThanNhanTao } from './HoiBenh_ThanNhanTao.component';
 import { HoiBenh_Bong } from './HoiBenh_Bong.component';
 import { HoiBenh_Tim } from './HoiBenh_Tim.component';
 import { HoiBenh_NgoaiTruYHCT } from './HoiBenh_NgoaiTruYHCT.component';
+import { SharedService } from '@app/_services/shared.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -21,10 +23,26 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
     @ViewChild('dynamicInsert', { read: ViewContainerRef })
     dynamicInsert: ViewContainerRef;
 
+    dynamicComponent: any;
+    subscription: Subscription;
     constructor(
         private factoryResolver: ComponentFactoryResolver,
         private emrService: EmrService,
-    ) { }
+        private sharedService: SharedService,
+    ) { 
+        
+        // listener
+        this.subscription = sharedService.commandAnnounced$.subscribe(
+            command => {
+                // Gửi broadcast đã nhận được lệnh
+                this.sharedService.confirmCommand(`HanhChinhBase Recived ${command}`);
+
+                // gửi lệnh cho các component đang mở
+                if (this.dynamicComponent != null) {
+                    this.dynamicComponent.doCommand(command);
+                }
+            });
+    }
     ngAfterViewInit(): void {
         setTimeout(() => {
 
@@ -35,13 +53,13 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
-                    const dynamicComponent_NoiTruYHCT = <HoiBenh_NoiTruYHCT> this.dynamicInsert.createComponent(componentFactory_NoiTruYHCT).instance;
+                    this.dynamicComponent = <HoiBenh_NoiTruYHCT> this.dynamicInsert.createComponent(componentFactory_NoiTruYHCT).instance;
                     // dynamicComponent.value = 10;
                     break;
                 case LoaiBenhAnEMR.NoiKhoa:
                     const componentFactory_NoiKhoa = this.factoryResolver.resolveComponentFactory(HoiBenh_NoiKhoa);
                     this.dynamicInsert.clear();
-                    const dynamicComponentNoiKhoa = <HoiBenh_NoiKhoa> this.dynamicInsert.createComponent(componentFactory_NoiKhoa).instance;
+                    this.dynamicComponent = <HoiBenh_NoiKhoa> this.dynamicInsert.createComponent(componentFactory_NoiKhoa).instance;
                     break;
                 case LoaiBenhAnEMR.SanKhoa:
                     const componentFactorySK = this.factoryResolver.resolveComponentFactory(HoiBenh_BenhAnSanKhoa);
@@ -49,18 +67,18 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
-                    const dynamicComponentSK = <HoiBenh_BenhAnSanKhoa> this.dynamicInsert.createComponent(componentFactorySK).instance;
+                    this.dynamicComponent = <HoiBenh_BenhAnSanKhoa> this.dynamicInsert.createComponent(componentFactorySK).instance;
                     // dynamicComponent.value = 10;
                     break;
                 case LoaiBenhAnEMR.DaLieu:
                     const componentFactory_DaLieu = this.factoryResolver.resolveComponentFactory(HoiBenh_DaLieu);
                     this.dynamicInsert.clear();
-                    const dynamicComponent_DaLieu = <HoiBenh_DaLieu> this.dynamicInsert.createComponent(componentFactory_DaLieu).instance;
+                    this.dynamicComponent = <HoiBenh_DaLieu> this.dynamicInsert.createComponent(componentFactory_DaLieu).instance;
                     break;
                 case LoaiBenhAnEMR.ThanNhanTao:
                     const componentFactory_ThanNhanTao = this.factoryResolver.resolveComponentFactory(HoiBenh_ThanNhanTao);
                     this.dynamicInsert.clear();
-                    const dynamicComponent_ThanNhanTao = <HoiBenh_ThanNhanTao> this.dynamicInsert.createComponent(componentFactory_ThanNhanTao).instance;
+                    this.dynamicComponent = <HoiBenh_ThanNhanTao> this.dynamicInsert.createComponent(componentFactory_ThanNhanTao).instance;
                     break;
                 case LoaiBenhAnEMR.Bong:
                     const componentFactoryBong = this.factoryResolver.resolveComponentFactory(HoiBenh_Bong);
@@ -68,7 +86,7 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
-                    const dynamicComponentBong = <HoiBenh_Bong> this.dynamicInsert.createComponent(componentFactoryBong).instance;
+                    this.dynamicComponent = <HoiBenh_Bong> this.dynamicInsert.createComponent(componentFactoryBong).instance;
                     // dynamicComponent.value = 10;
                     break;
                  case LoaiBenhAnEMR.Tim:
@@ -77,7 +95,7 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                    console.log(this.dynamicInsert);
                    this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
-                    const dynamicComponentTim = <HoiBenh_Tim> this.dynamicInsert.createComponent(componentFactoryTim).instance;
+                    this.dynamicComponent = <HoiBenh_Tim> this.dynamicInsert.createComponent(componentFactoryTim).instance;
                     // dynamicComponent.value = 10;
                     break;
                 case LoaiBenhAnEMR.NgoaiTruYHCT:
@@ -86,7 +104,7 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     // @ts-ignore
                     // tslint:disable-next-line:max-line-length
-                    const dynamicComponent_NgoaiTruYHCT = <HoiBenh_NgoaiTruYHCT>this.dynamicInsert.createComponent(componentFactory_NgoaiTruYHCT).instance;
+                    this.dynamicComponent = <HoiBenh_NgoaiTruYHCT>this.dynamicInsert.createComponent(componentFactory_NgoaiTruYHCT).instance;
                     break;
                 default:
                     break;

@@ -58,7 +58,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DiUng"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.DiUng" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DiUng= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhDiUng">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhDiUng">Dị ứng</label>
                                         </div>
@@ -73,7 +73,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLa"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLa" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLa= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhThuocLa">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhThuocLa">Thuốc lá</label>
                                         </div>
@@ -90,7 +90,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.MaTuy"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.MaTuy" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.MaTuy= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhMaTuy">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhMaTuy">Ma túy</label>
                                         </div>
@@ -105,7 +105,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLao"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLao" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLao= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhThuocLao">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhThuocLao">Thuốc lào</label>
                                         </div>
@@ -122,7 +122,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RuouBia"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.RuouBia" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RuouBia= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhRuouBia">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhRuouBia">Rượu bia</label>
                                         </div>
@@ -137,7 +137,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RoiLoanMoMau"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.RoiLoanMoMau" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.RoiLoanMoMau = $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhRoiLoanMoMau">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhRoiLoanMoMau">Rối loạn mỡ máu</label>
                                         </div>
@@ -154,7 +154,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DaiThaoDuong"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.DaiThaoDuong" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.DaiThaoDuong= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhDaiThaoDuong">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhDaiThaoDuong">Đái tháo đường</label>
                                         </div>
@@ -169,7 +169,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.YeuToGiaDinh"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.YeuToGiaDinh" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.YeuToGiaDinh= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhYeuToGiaDinh">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhYeuToGiaDinh">Yếu tố gia đình</label>
                                         </div>
@@ -186,7 +186,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.CaoHuyetAp"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.CaoHuyetAp" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.CaoHuyetAp= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhCaoHuyetAp">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhCaoHuyetAp">Cao huyết áp</label>
                                         </div>
@@ -201,7 +201,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input"
-                                                [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.Khac_DacDiemLienQuanBenh"
+                                                [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.Khac_DacDiemLienQuanBenh" (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.Khac_DacDiemLienQuanBenh= $event" 
                                                 [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhKhac_DacDiemLienQuanBenh">
                                             <label class="form-check-label" for="DacDiemLienQuanBenhKhac_DacDiemLienQuanBenh">Khác</label>
                                         </div>

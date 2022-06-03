@@ -1,5 +1,12 @@
 # EMR WEB
 
+## Khởi tạo bệnh án
+`http://localhost:4200/khoi-tao?IDBenhAn={IDBenhAn}`
+## IDBenhAn Nội khoa
+`http://localhost:4200/khoi-tao?IDBenhAn=dmRQMFVjUWRQRkw1SVVjZW9lcVR1SFBwbnJMdVZSUldiZGRsTzNlQlFNOVptY2dERTYzejZ1Mk5nQ3dMa2NjVEFuOWM4TFFQTGR0UllQSXdYMzQ2WEhUUEgxbnBzLzgxNnV3VmsyUVNBbkV1MlFqRW5MaXp3UmRwMnJBeUcxOWo=`
+
+## Bệnh án bỏng
+`http://localhost:4200/khoi-tao?IDBenhAn=NEVDYzhHV2E2cVNGZGJpWmNXdENUVUFxOVlDRHBwbTFKVkk1bU1ucUNGUlE0dGVjaDI5VTA1bW1DRVJzTGkyOExjQlUvSzB1UUp2VUVvWnEyU29ZTmw4alppMm84NlFmQzlVU3JvcmdnYWJteEY4aDRRVEVDL1F6d3FnWDhTRVo=`
 ## Main lib 
 * [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 * [Font Awesome Free ](https://fontawesome.com) version 5.15.3
