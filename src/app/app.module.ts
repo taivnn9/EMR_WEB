@@ -158,13 +158,13 @@ import { KhamBenh_Tim } from './admin/KhamBenh/KhamBenh_Tim.component';
     // { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-    EmrService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (service: EmrService) => function() { return service.GetDataBenhAnPromise(); },
-      deps: [EmrService],
-      multi: true
-    },
+    // EmrService,
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: (service: EmrService) => function() { return service.GetDataBenhAnPromise(); },
+    //   deps: [EmrService],
+    //   multi: true
+    // },
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
