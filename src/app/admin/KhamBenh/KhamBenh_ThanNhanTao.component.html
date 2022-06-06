@@ -1,0 +1,454 @@
+<!-- Content Wrapper. Contains page content -->
+
+
+<!-- Main content -->
+<section class="content" xmlns="http://www.w3.org/1999/html">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-primary card-outline card-custom">
+          <!-- <div class="card-header">
+              <h3 class="card-title"></h3>
+            </div> -->
+          <div class="row">
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row">
+                  <label class="col-12 col-form-label col-form-label-bold">8. Triệu chứng thần kinh tâm thần:</label>
+                </div>
+                <!--  -->
+                <div class="form-group row">
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="RoiLoanVanDongID">Rối loạn vận động : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_RoiLoanVanDong" [ngModelOptions]="{standalone: true}" id="RoiLoanVanDongID">
+                    </div>
+                  </div>
+
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="RoiLoanCamGiacID">Rối loạn cảm giác : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_RoiLoanCamGiac" [ngModelOptions]="{standalone: true}" id="RoiLoanCamGiacID">
+                    </div>
+                  </div>
+
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="TamThanPhanLietID">Tâm thần phân liệt : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_TamThanPhanLiet" [ngModelOptions]="{standalone: true}" id="TamThanPhanLietID">
+                    </div>
+                  </div>
+
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-2" for="HoiChungTramCamID">Hội chứng trầm cảm : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_HoiChungTramCam" [ngModelOptions]="{standalone: true}" id="HoiChungTramCamID">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row">
+                  <div class="col-12"></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-3" for="HoiChungMangNaoID">Hội chứng màng não : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_HoiChungMangNao" [ngModelOptions]="{standalone: true}" id="HoiChungMangNaoID">
+                    </div>
+                  </div>
+
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-3" for="HoiChungTienDinhTieuNaoID">Hội chứng tiền đình tiểu não : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_HoiChungTienDinhTieuNao" [ngModelOptions]="{standalone: true}" id="HoiChungTienDinhTieuNaoID">
+                    </div>
+                  </div>
+
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-3" for="HoiChungCacDayTKSoNaoID">Hội chứng các dây thần kinh sọ não : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_HoiChungCacDayTKSoNao" [ngModelOptions]="{standalone: true}" id="HoiChungCacDayTKSoNaoID">
+                    </div>
+                  </div>
+
+                  <div class="col-12  ">
+                    <div class="form-check row">
+                      <label class="form-check-label col-3" for="ViemCacDayTKNgoaiViID">Viêm các dây thần kinh ngoại vi : </label>
+                      <input type="checkbox" class="form-check-input col-1"
+                             [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Is_ViemCacDayTKNgoaiVi" [ngModelOptions]="{standalone: true}" id="ViemCacDayTKNgoaiViID">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+
+            <form class="form-horizontal col-12">
+              <div class="card-body">
+                <div class="form-group row">
+                  <label class="col-12 col-form-label col-form-label-bold">9. Các triệu chứng khác:</label>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-1 col-form-label">9.1 Cơ xương khớp : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.CoXuongKhop" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-1 col-form-label">9.2 Mắt : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Mat" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-1 col-form-label">9.3 Tai mũi họng : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.TaiMuiHong" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-1 col-form-label">9.4 Da liễu : </label>
+                  <div class="col-10">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DaLieu" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row">
+                  <label class="col-12 col-form-label col-form-label-bold">CẬN LÂM SÀNG :</label>
+                </div>
+                <div class="form-group row row">
+                  <label class="col-12 col-form-label col-form-label-bold">1. Xét nghiệm sinh hóa:</label>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Ure máu (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.UreMau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Creatinine máu (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.CreatinineMau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Đường máu (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DuongMau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Protid máu (g/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.ProtidMau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Acid uric máu (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.AcidUricMau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Cholesterol TF (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.CholesterolTF" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Bilirubine TF (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.BilirubineTF" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Bilirubine TT (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.BilirubineTT" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Bilirubine GT (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.BilirubineGT" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">SGOT (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.SGOT" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">SGPT (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.SGPT" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row">
+                  <div></div><br>
+                </div>
+                <div class="form-group row">
+                  <div></div><br>
+                </div>
+                <div class="form-group row">
+                  <div></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Na (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Na" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">K (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.K" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Ca (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Ca" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Cl (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Cl" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Phospho (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Phospho" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Sắt (mmol/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Sat" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">pH máu : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.PhMau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Áp lực thẩm thấu máu : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.ApLucThamThauMau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Mức lọc cầu thận : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.MucLocCauThan" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <!--            //tim mạch-->
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <label class="col-12 col-form-label col-form-label-bold">2. Xét nghiệm huyết học:</label>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Hồng cầu (Tera/l_10&#x00B9;&#x00B2;/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.HongCau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Bạch cầu (Giga/l_10&#x2079;/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.BachCau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">BC trung tính (%) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.BachCauTrungTinh" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">BC ái toan (%) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.BachCauAiToan" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">BC ái kiềm (%) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.BachCauAiKiem" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Tiểu cầu (Giga/l_10&#x2079;/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.TieuCau" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Hemoglobine (g/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.HemoGlobine" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Hematocrite (l/l) : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.Hematocrite" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <form class="form-horizontal col-6">
+              <div class="card-body">
+                <div class="form-group row row">
+                  <div></div><br>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Anti HbC : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.AntiHbC" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">HbeAg : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.HbeAg" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Anti HbeAg : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.AntiHbeAg" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Hbs Ag : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.HbsAg" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Anti Hbs Ag : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.AntiHbsAg" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Anti HCV : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.AntiHCV" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">KST Sốt rét : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.KSTSotRet" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">Độc chất : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.DocChat" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-3 col-form-label">HIV : </label>
+                  <div class="col-9">
+                    <input class="form-control form-control-sm" type="text"
+                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.HIV" [ngModelOptions]="{standalone: true}" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

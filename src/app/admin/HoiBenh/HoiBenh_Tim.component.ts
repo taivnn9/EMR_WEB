@@ -10,12 +10,13 @@ import { ComponentType, ToastrService } from 'ngx-toastr';
 
 
 @Component({ 
-    selector: 'HoiBenh_DaLieu',
-    templateUrl: 'HoiBenh_DaLieu.component.html' 
+    selector: 'HoiBenh_Tim',
+    templateUrl: 'HoiBenh_Tim.component.html' 
 })
-export class HoiBenh_DaLieu implements OnInit {
+export class HoiBenh_Tim implements OnInit {
 
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
+  
 
     constructor(
         private emrService: EmrService,
@@ -23,13 +24,13 @@ export class HoiBenh_DaLieu implements OnInit {
         private overlayService: OverlayService
     ) {}
 
-    ngOnInit(): void {
-        this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;
+    ngOnInit(): void {       
+        this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;        
     }
 
     
     doCommand(command: number) {
-        console.log(`HoiBenh_DaLieu đã nhận được lệnh ${command}`);
+        console.log(`HoiBenh_BenhAnSanKhoa đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -63,18 +64,5 @@ export class HoiBenh_DaLieu implements OnInit {
         });
     }
 
-    appendVal(obj: any, key: any, value: any) {
-        if(this._isNullOrEmpty(obj)){
-            obj = {}
-        }
-        obj[key] = value;
-        return obj;
-    }
 
-    _isNullOrEmpty(value: any) {
-        if (value == null || value == undefined || value == '') {
-            return true;
-        }
-        return false;
-    }
 }

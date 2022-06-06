@@ -1,35 +1,57 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThongTinHoSoBenhAn } from '@app/_models/EMR_MAIN/XemBenhAn/xemBenhAn';
 import { Command } from '@app/_models/UTILS/Command';
 import { EmrService } from '@app/_services/emr.service';
+import { NhanVienService } from '@app/_services/NhanVien.service';
 import { OverlayService } from '@app/_services/overlay.service';
 import { SharedService } from '@app/_services/shared.service';
 import { environment } from '@environments/environment';
-import { ComponentType, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
-
-@Component({ 
-    selector: 'HoiBenh_DaLieu',
-    templateUrl: 'HoiBenh_DaLieu.component.html' 
+@Component({
+    selector: 'KhamBenh_ThanNhanTao',
+    templateUrl: 'KhamBenh_ThanNhanTao.component.html'
 })
-export class HoiBenh_DaLieu implements OnInit {
-
+export class KhamBenh_ThanNhanTao implements OnInit {
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
 
+    ListNhanVien = []
     constructor(
         private emrService: EmrService,
         private sharedService: SharedService,
-        private overlayService: OverlayService
+        private nhanVienSerivce: NhanVienService,
+        private overlayService: OverlayService,
+        private toastr: ToastrService,
     ) {}
 
-    ngOnInit(): void {
+
+    async ngOnInit() {
         this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;
+
+        await this.nhanVienSerivce.ListNhanVien().toPromise().then(
+            (data: any) => {
+                if (data.Success) {
+                    const items = []
+                    for (let index = 0; index < data.Data.length; index++) {
+                        const element = data.Data[index];
+                        const item = {
+                            value: element.IdNhanVien,
+                            label: element.HoVaTen
+                        }
+                        items.push(item);
+                    }
+                    this.ListNhanVien = items
+                }
+            },
+            error => {
+                this.toastr.error(error, 'Lỗi');
+            });
     }
 
-    
+
     doCommand(command: number) {
-        console.log(`HoiBenh_DaLieu đã nhận được lệnh ${command}`);
+        console.log(`KhamBenh_ThanNhanTao đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -61,20 +83,5 @@ export class HoiBenh_DaLieu implements OnInit {
             Data: this.ThongTinHoSoBenhAn,
             Sender: environment.ROUTE_HOI_BENH
         });
-    }
-
-    appendVal(obj: any, key: any, value: any) {
-        if(this._isNullOrEmpty(obj)){
-            obj = {}
-        }
-        obj[key] = value;
-        return obj;
-    }
-
-    _isNullOrEmpty(value: any) {
-        if (value == null || value == undefined || value == '') {
-            return true;
-        }
-        return false;
     }
 }

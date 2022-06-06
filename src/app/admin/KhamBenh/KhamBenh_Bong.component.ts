@@ -1,35 +1,59 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThongTinHoSoBenhAn } from '@app/_models/EMR_MAIN/XemBenhAn/xemBenhAn';
 import { Command } from '@app/_models/UTILS/Command';
 import { EmrService } from '@app/_services/emr.service';
-import { OverlayService } from '@app/_services/overlay.service';
+import { NhanVienService } from '@app/_services/NhanVien.service';
 import { SharedService } from '@app/_services/shared.service';
 import { environment } from '@environments/environment';
-import { ComponentType, ToastrService } from 'ngx-toastr';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({ 
-    selector: 'HoiBenh_DaLieu',
-    templateUrl: 'HoiBenh_DaLieu.component.html' 
+    selector: 'KhamBenh_Bong',
+    templateUrl: 'KhamBenh_Bong.component.html' 
 })
-export class HoiBenh_DaLieu implements OnInit {
-
+export class KhamBenh_Bong implements OnInit {
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
 
     constructor(
         private emrService: EmrService,
         private sharedService: SharedService,
-        private overlayService: OverlayService
+        private nhanVienService : NhanVienService,
+        private toastr: ToastrService,
     ) {}
 
-    ngOnInit(): void {
+
+    ListNhanVien = []
+
+    async ngOnInit() {
         this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;
+        this.ThongTinHoSoBenhAn.BenhAn.RoiHanKhaNangSinhDuc = 2;
+
+        this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;
+        
+        await this.nhanVienService.ListNhanVien().toPromise().then(
+            (data: any) => {
+                if (data.Success) {
+                    const items = []
+                    for (let index = 0; index < data.Data.length; index++) {
+                        const element = data.Data[index];
+                        const item = {
+                            value: element.IdNhanVien,
+                            label: element.HoVaTen
+                        }
+                        items.push(item);
+                    }
+                    this.ListNhanVien = items
+                }
+            },
+            error => {
+                this.toastr.error(error, 'Lỗi');
+            });
     }
 
     
     doCommand(command: number) {
-        console.log(`HoiBenh_DaLieu đã nhận được lệnh ${command}`);
+        console.log(`KhamBenh_NoiTruYHCT đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -63,18 +87,5 @@ export class HoiBenh_DaLieu implements OnInit {
         });
     }
 
-    appendVal(obj: any, key: any, value: any) {
-        if(this._isNullOrEmpty(obj)){
-            obj = {}
-        }
-        obj[key] = value;
-        return obj;
-    }
-
-    _isNullOrEmpty(value: any) {
-        if (value == null || value == undefined || value == '') {
-            return true;
-        }
-        return false;
-    }
+   
 }

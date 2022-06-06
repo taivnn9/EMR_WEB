@@ -10,10 +10,10 @@ import { ComponentType, ToastrService } from 'ngx-toastr';
 
 
 @Component({ 
-    selector: 'HoiBenh_DaLieu',
-    templateUrl: 'HoiBenh_DaLieu.component.html' 
+    selector: 'HoiBenh_Bong',
+    templateUrl: 'HoiBenh_Bong.component.html' 
 })
-export class HoiBenh_DaLieu implements OnInit {
+export class HoiBenh_Bong implements OnInit {
 
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
 
@@ -29,7 +29,7 @@ export class HoiBenh_DaLieu implements OnInit {
 
     
     doCommand(command: number) {
-        console.log(`HoiBenh_DaLieu đã nhận được lệnh ${command}`);
+        console.log(`HoiBenh_Bong đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -63,18 +63,5 @@ export class HoiBenh_DaLieu implements OnInit {
         });
     }
 
-    appendVal(obj: any, key: any, value: any) {
-        if(this._isNullOrEmpty(obj)){
-            obj = {}
-        }
-        obj[key] = value;
-        return obj;
-    }
 
-    _isNullOrEmpty(value: any) {
-        if (value == null || value == undefined || value == '') {
-            return true;
-        }
-        return false;
-    }
 }

@@ -23,7 +23,7 @@ import { OverlayService } from '@app/_services/overlay.service';
 })
 export class MainWindowComponent implements OnInit {
     env = environment
-    loading = false;
+    loading: boolean = false;
     tenBenhAn: string = '';
     tabs: Tab[] = [];
     commandEnum: typeof Command = Command;
@@ -72,7 +72,7 @@ export class MainWindowComponent implements OnInit {
         // Lắng nghe lệnh lưu gửi trả về từ component con
         this.sharedService.commandSave$.subscribe(
             (commandData: CommandData) => {
-                // console.log(commandData);
+                console.log(commandData);
 
                 // Chỉ lưu phiếu đang mở
                 const href = this.router.url;
@@ -87,6 +87,19 @@ export class MainWindowComponent implements OnInit {
 
     async ngOnInit() {
         // Lấy tên bệnh án
+        this.loading = true;
+        // await this.emrService.SetDataBenhAn();
+        await this.emrService.GetDataBenhAn().toPromise().then(
+            (data: any) => {
+                this.loading = false;
+                this.emrService.ThongTinHoSoBenhAn = data.Data;
+                this.toastr.success(``, `Chào mừng bạn đến với hệ thống quản lý EMR`);
+            },
+            error => {
+                this.toastr.error(`${JSON.stringify(error)}`, `Lỗi khi lấy thông tin bệnh án`);
+                // console.error(error);
+            });
+
 
         try {
             console.log(this.emrService.ThongTinHoSoBenhAn.BenhAn.TenMauPhieu);
@@ -111,15 +124,18 @@ export class MainWindowComponent implements OnInit {
 
     
     announceCommand(command: any) {
+        console.log(`MainWindowComponent announceCommand`, command);
         this.sharedService.announceCommand(`${command}`);
     }
     save(ThongTinHoSoBenhAn: ThongTinHoSoBenhAn){
+        console.log(`Data gửi đi`, ThongTinHoSoBenhAn);
+        
         this.emrService.BenhAnSave(ThongTinHoSoBenhAn).toPromise().then(
             response => {
                 console.log(response);
                 if (response.Success != undefined && response.Success) {
                     // Cập nhật lại ThongTinHoSoBenhAn vào emr service
-                    this.emrService.SetDataBenhAn();
+                    this.emrService.ThongTinHoSoBenhAn = ThongTinHoSoBenhAn;
                     this.toastr.success(``, `Lưu thông tin ${this.getNameLoaiDataIn()} thành công` );
                 } else {
                     this.toastr.error(`${JSON.stringify(response.Error)}`, `Lỗi khi lưu thông tin ${this.getNameLoaiDataIn()}`);
