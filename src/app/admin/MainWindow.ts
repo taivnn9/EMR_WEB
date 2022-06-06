@@ -115,6 +115,8 @@ export class MainWindowComponent implements OnInit {
         this.sharedService.announceCommand(`${command}`);
     }
     save(ThongTinHoSoBenhAn: ThongTinHoSoBenhAn){
+        console.log(`Data gửi đi`, ThongTinHoSoBenhAn);
+        
         this.emrService.BenhAnSave(ThongTinHoSoBenhAn).toPromise().then(
             response => {
                 console.log(response);

@@ -7,6 +7,10 @@
 
 ## Bệnh án bỏng
 `http://localhost:4200/khoi-tao?IDBenhAn=NEVDYzhHV2E2cVNGZGJpWmNXdENUVUFxOVlDRHBwbTFKVkk1bU1ucUNGUlE0dGVjaDI5VTA1bW1DRVJzTGkyOExjQlUvSzB1UUp2VUVvWnEyU29ZTmw4alppMm84NlFmQzlVU3JvcmdnYWJteEY4aDRRVEVDL1F6d3FnWDhTRVo=`
+
+## Bệnh án da liễu
+`http://localhost:4200/khoi-tao?IDBenhAn=bGpNSXdoQU9BSE1Sd2xqcjVZVldlcTg5em1IZmplV3pVaU83SS9HTTl6dVRlS2V3LzVZcC9pQmtLZTdaWWZvU2puTlQwNVFPN1Y2dlhpbmp3MUNaUkZNa1hPekdpUWI3UGdjRmpQWXVmWWVTa1lUOUdja2t2RTN0cW5namprY0M=`
+
 ## Main lib 
 * [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 * [Font Awesome Free ](https://fontawesome.com) version 5.15.3
