@@ -31,6 +31,9 @@ export class MainWindowComponent implements OnInit {
     loaiDataIn: string = ''
     DataBase64Pdf: string = ''
     
+    saveEvents: number = 0;
+    saveChanges: number = 0;
+
     @ViewChild('modalHanhchinhPdfReference') modalHanhchinhPdfReference: ElementRef<HTMLElement>;
 
     OpenModalHanhchinhPdf() {
@@ -76,9 +79,11 @@ export class MainWindowComponent implements OnInit {
 
                 // Chỉ lưu phiếu đang mở
                 const href = this.router.url;
-                if(!this.router.url.includes(commandData.Sender)){
+                if(!this.router.url.includes(commandData.Sender) ||
+                this.saveChanges >= this.saveEvents){
                     return;
                 }
+                this.saveChanges ++;
                 this.save(commandData.Data)
                 
             });

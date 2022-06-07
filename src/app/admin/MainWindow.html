@@ -25,7 +25,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" role="button" (click)="announceCommand(commandEnum.Save)" style="color: darkblue;">
+        <a class="nav-link" data-widget="navbar-search" role="button" (click)="saveEvents = saveEvents + 1; announceCommand(commandEnum.Save)" style="color: darkblue;">
           <i class="far fa-save"></i>
           Lưu
         </a>
