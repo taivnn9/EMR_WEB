@@ -92,12 +92,21 @@
                     <div class="form-group row"> 
 
                       <div class="col-3">
+
                         <div class="form-check">
+                          <input  type="checkbox" class="form-check-input" 
+                          [ngModel]="ThongTinHoSoBenhAn.BenhAn.YeuToNguyCoMachVanh?.NamTren5Tuoi" 
+                          (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.YeuToNguyCoMachVanh = appendVal(ThongTinHoSoBenhAn.BenhAn.YeuToNguyCoMachVanh,'NamTren5Tuoi',$event)" 
+                          [ngModelOptions]="{standalone: true}">
+                          <label class="form-check-label">Nam > 50 tuổi</label>
+                        </div>
+
+                        <!-- <div class="form-check">
                           <input type="checkbox" class="form-check-input" 
                           [(ngModel)]="ThongTinHoSoBenhAn.BenhAn.YeuToNguyCoMachVanh.NamTren5Tuoi" 
                           [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhDiUng">
                           <label class="form-check-label" for="DacDiemLienQuanBenhDiUng">Nam > 50 tuổi</label>
-                        </div>
+                        </div> -->
                       </div>
 
                       <div class="col-3">
