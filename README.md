@@ -3,13 +3,15 @@
 ## Khởi tạo bệnh án
 `http://localhost:4200/khoi-tao?IDBenhAn={IDBenhAn}`
 ## IDBenhAn Nội khoa
-`http://localhost:4200/khoi-tao?IDBenhAn=QVJiUytXMTdlMGlBL3VTRGFZbVU0a3NUa0o5eXcxSm5peFN6VGwvYnoyZ0hiQ0NyS0R0RDZHRGdnbTJrUWluekxvQVprcitwbWlHSmxNQ01kcTRpSHR4VTdPR3JKV1NmU09SUzRObGNvNEtTaUhZM0NIbisxb0N2M0tJM2tTWkM=`
+`http://localhost:4200/khoi-tao?IDBenhAn=YmYxbUhxN0dheGVsUkxmbktVZS9jTlhiTnFGTEcxU3ZZNU02SVZ6NHErWmRpOU41YXRieGU3U3ptS2kvVVBWTXBJUFA3RUpyU1NHVWRNK3k0VEV3SkRzbGdpZ0loSHoreUZhMXE5RUgrdmhyU05odGFxMFlISzJObVN1WTNGMlg=`
 
+## Bệnh án ngoại trú YHCT
+`http://localhost:4200/khoi-tao?IDBenhAn=alRmNnV5d0RYYXNCUDErV2ZUdmFhakJ2T2pZbVdwZkZLcEdWT3Vid3R6eHNkYmp6NEJsbVgyOEoxSVRBWkZ0NnVwcFloVGxMQjV1T2dYY1R5bzFzSkZ4STRIZUZTR1NyVC9XN1hYK0l4ZEdINVVyblJlekdWQTZpd2RVWWI3WGg=`
 ## Bệnh án bỏng
-`http://localhost:4200/khoi-tao?IDBenhAn=enNVNU1xcjNacWdmS2VMVTNnaEM1cmp4dmJ1dXcrT2lqT0RlS3QzeVhkWnNwOWFlTWJabCt2OUlLK3R6T25mRVZMS3J1RVk2UXRIUEFlaVFHa0QzUis1QUYrclk2Q2x6c0t4OTl5UnZpbzFaZXRHUkpuTTA3MHljYm5sYWdyS04=`
+`http://localhost:4200/khoi-tao?IDBenhAn=cG12cndKTnRtV25tUWl5OUxtWXF6T2h6VXZqenBnM0lLTXNyaWcyQ3hQUXlxa3dqRWx3eHRPRVlQaG5JUWlFaXZSeC9WN1daQklYNFZhOUZOdVM5VUxMN2VGbkZnVks2T0ZnRXZKOTZjVCthVkNUWVFKKzlSUTJJRGFpb0trV2U=`
 
 ## Bệnh án da liễu
-`http://localhost:4200/khoi-tao?IDBenhAn=OVJuRmV0ZFJsWjErUnBoSkVOSk1pYTg0ZWRDU0U4akljanVabXdrV1NPdVN6OVNOR2xGRDlURmhlYWVLeFZrdkRtODQ1NTRFMlRvcTVSQ1hvbnpIRXdwbDQ0WmtwZEpkR0k2VnZxNDJGbXBHRWxlTndaVlUwTWRNUWR0REQ0OUc=`
+`http://localhost:4200/khoi-tao?IDBenhAn=akkrNkZJTWVWbC9Gby9iVCtzMUE3RlBqVEtOcHlBZGs3RDdJOXNQaXV5WlJZWEQzZVVaUEwyOHBSZDZwNlJDNUs4enQ2cXRxS1d1aXRJeUFpTHFON2hMRmN5cGdvUzV4aStFYWllUEtVMWRGSjlkalZHYURJd0xmUTVLRHJ5bXI=`
 
 ## Main lib 
 * [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
