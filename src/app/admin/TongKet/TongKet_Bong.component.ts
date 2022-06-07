@@ -72,9 +72,10 @@ export class TongKet_Bong implements OnInit {
         console.log(`save()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component lưu lại
         this.sharedService.confirmPSave({
-            Type: environment.HOI_BENH,
+
+            Type: environment.TONG_KET,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_HOI_BENH
+            Sender: environment.ROUTE_TONG_KET
         });
     }
 
@@ -82,9 +83,10 @@ export class TongKet_Bong implements OnInit {
         console.log(`print()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component in ra
         this.sharedService.confirmPrint({
-            Type: environment.HOI_BENH,
+
+            Type: environment.TONG_KET,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_HOI_BENH
+            Sender: environment.ROUTE_TONG_KET
         });
     }
 
