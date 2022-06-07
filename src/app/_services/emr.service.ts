@@ -12,24 +12,28 @@ export class EmrService {
 
     constructor(private http: HttpClient) {}
 
-    GetDataBenhAnPromise(): Promise<any> {
-        return this.GetDataBenhAn().toPromise().then(
-            (data: any) => {
-                this.ThongTinHoSoBenhAn = data.Data;
-            },
-            error => {
-                console.error(error);
-            });
-    }
-    async SetDataBenhAn(){
-        await this.GetDataBenhAn().toPromise().then(
-            (data: any) => {
-                this.ThongTinHoSoBenhAn = data.Data;
-            },
-            error => {
-                console.error(error);
-            });
-    }
+    // GetDataBenhAnPromise(): Promise<any> {
+    //     console.log(`GetDataBenhAnPromise`);
+        
+    //     return this.GetDataBenhAn().toPromise().then(
+    //         (data: any) => {
+    //             this.ThongTinHoSoBenhAn = data.Data;
+    //         },
+    //         error => {
+    //             console.error(error);
+    //         });
+    // }
+    // async SetDataBenhAn(){
+    //     console.log(`SetDataBenhAn`);
+        
+    //     await this.GetDataBenhAn().toPromise().then(
+    //         (data: any) => {
+    //             this.ThongTinHoSoBenhAn = data.Data;
+    //         },
+    //         error => {
+    //             console.error(error);
+    //         });
+    // }
     DaKhoiTao(): boolean{
         return this.GetIdBenhAn() != null;
     }
@@ -39,6 +43,7 @@ export class EmrService {
     }
     
     SetIdBenhAn(IDBenhAn: string){
+        // console.log(IDBenhAn);
         localStorage.setItem(`${environment.IDBenhAn}`, IDBenhAn);
     }
 
