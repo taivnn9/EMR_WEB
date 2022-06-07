@@ -69,7 +69,7 @@
                   <!--  -->
                   <div class="col-3">
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" 
+                      <input #inputCheckDiUng type="checkbox" class="form-check-input" 
                       [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.DiUng" 
                       (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh = appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'DiUng',$event)" 
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhDiUng">
@@ -77,7 +77,7 @@
                     </div>
                   </div>
                   <div class="col-3">
-                    <input  class="form-control form-control-sm" type="text" 
+                    <input [disabled]="!inputCheckDiUng.checked"  class="form-control form-control-sm" type="text" 
                     [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.DiUng_Text"
                      (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh = appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'DiUng_Text',$event)"
                       [ngModelOptions]="{standalone: true}" 
@@ -85,7 +85,7 @@
                   </div>
                   <div class="col-3">
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" 
+                      <input #inputCheckThuocLa type="checkbox" class="form-check-input" 
                       [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLa" 
                       (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'ThuocLa',$event)"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhThuocLa">
@@ -93,7 +93,7 @@
                     </div>
                   </div>
                   <div class="col-3">
-                    <input class="form-control form-control-sm" type="text" 
+                    <input  [disabled]="!inputCheckThuocLa.checked" class="form-control form-control-sm" type="text" 
                     [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLa_Text"
                      (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'ThuocLa_Text',$event)"  
                      [ngModelOptions]="{standalone: true}" 
@@ -102,7 +102,7 @@
                   <!--  -->
                   <div class="col-3">
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" 
+                      <input #inputCheckMaTuy type="checkbox" class="form-check-input" 
                       [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.MaTuy"
                        (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'MaTuy',$event)"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhMaTuy">
@@ -110,7 +110,7 @@
                     </div>
                   </div>
                   <div class="col-3">
-                    <input class="form-control form-control-sm" type="text" 
+                    <input [disabled]="!inputCheckMaTuy.checked" class="form-control form-control-sm" type="text" 
                     [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.MaTuy_Text"
                      (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'MaTuy_Text',$event)" 
                       [ngModelOptions]="{standalone: true}" 
@@ -118,7 +118,7 @@
                   </div>
                   <div class="col-3">
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" 
+                      <input #inputCheckThuocLao type="checkbox" class="form-check-input" 
                       [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLao"
                        (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh.ThuocLao= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'ThuocLao',$event)"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhThuocLao">
@@ -126,7 +126,7 @@
                     </div>
                   </div>
                   <div class="col-3">
-                    <input class="form-control form-control-sm" type="text" 
+                    <input [disabled]="!inputCheckThuocLao.checked" class="form-control form-control-sm" type="text" 
                     [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.ThuocLao_Text"
                      (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'ThuocLao_Text',$event)" 
                       [ngModelOptions]="{standalone: true}" 
@@ -136,7 +136,7 @@
                   <!--  -->
                   <div class="col-3">
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" 
+                      <input #inputCheckRuouBia type="checkbox" class="form-check-input" 
                       [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.RuouBia" 
                       (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'RuouBia',$event)"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhRuouBia">
@@ -144,7 +144,7 @@
                     </div>
                   </div>
                   <div class="col-3">
-                    <input class="form-control form-control-sm" type="text" 
+                    <input [disabled]="!inputCheckRuouBia.checked" class="form-control form-control-sm" type="text" 
                     [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.RuouBia_Text" 
                     (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'RuouBia_Text',$event)"  
                     [ngModelOptions]="{standalone: true}" 
@@ -152,7 +152,7 @@
                   </div>
                   <div class="col-3">
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" 
+                      <input #inputCheckDacDiemLienQuanBenhKhac type="checkbox" class="form-check-input" 
                       [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.Khac_DacDiemLienQuanBenh"
                        (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'Khac_DacDiemLienQuanBenh',$event)"  
                       [ngModelOptions]="{standalone: true}" id="DacDiemLienQuanBenhKhac_DacDiemLienQuanBenh">
@@ -160,7 +160,7 @@
                     </div>
                   </div>
                   <div class="col-3">
-                    <input class="form-control form-control-sm" type="text" 
+                    <input [disabled]="!inputCheckDacDiemLienQuanBenhKhac.checked" class="form-control form-control-sm" type="text" 
                     [ngModel]="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh?.Khac_DacDiemLienQuanBenh_Text" 
                     (ngModelChange)="ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh= appendVal(ThongTinHoSoBenhAn.BenhAn.DacDiemLienQuanBenh,'Khac_DacDiemLienQuanBenh_Text',$event)"
                       [ngModelOptions]="{standalone: true}" 
