@@ -34,6 +34,9 @@ export class MainWindowComponent implements OnInit {
     saveEvents: number = 0;
     saveChanges: number = 0;
 
+    printEvents: number = 0;
+    printChanges: number = 0;
+
     @ViewChild('modalHanhchinhPdfReference') modalHanhchinhPdfReference: ElementRef<HTMLElement>;
 
     OpenModalHanhchinhPdf() {
@@ -55,6 +58,10 @@ export class MainWindowComponent implements OnInit {
                 // nhận dữ liệu từ component con
                 console.log(data);
                 // this.showSpinner()
+                if(this.printChanges >= this.printEvents){
+                    return
+                }
+                this.printChanges ++;
                 this.emrService.PrintWebEMR(data.Data, this.loaiDataIn).toPromise().then(
                     response => {
                         console.log(response);
