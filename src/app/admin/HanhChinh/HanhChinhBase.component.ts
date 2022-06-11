@@ -5,6 +5,7 @@ import { HanhChinh_NoiTruYHCT } from './HanhChinh_NoiTruYHCT.component';
 import { HanhChinh_BenhAnSanKhoa } from './HanhChinh_BenhAnSanKhoa.component';
 import { HanhChinh_ThanNhanTao } from './HanhChinh_ThanNhanTao.component';
 import { HanhChinh_NgoaiTruYHCT } from './HanhChinh_NgoaiTruYHCT.component';
+import { HanhChinh_Sosinh } from './HanhChinh_Sosinh.component';
 import { Subscription } from 'rxjs';
 import { SharedService } from '@app/_services/shared.service';
 import { Command } from 'protractor';
@@ -79,6 +80,11 @@ export class HanhChinhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     // tslint:disable-next-line:max-line-length
                     this.dynamicComponent = <HanhChinh_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactory_NgoaiTruYHCT).instance;
+                    break;
+                case LoaiBenhAnEMR.SoSinh:
+                    const componentFactory_Sosinh = this.factoryResolver.resolveComponentFactory(HanhChinh_Sosinh);
+                    this.dynamicInsert.clear();
+                    this.dynamicComponent = <HanhChinh_Sosinh> this.dynamicInsert.createComponent(componentFactory_Sosinh).instance;
                     break;
                 default:
                     const componentFactory_Default= this.factoryResolver.resolveComponentFactory(HanhChinh_Base);

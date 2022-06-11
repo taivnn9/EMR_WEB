@@ -35,6 +35,11 @@ import { HanhChinh_ThanNhanTao } from './admin/HanhChinh/HanhChinh_ThanNhanTao.c
 import { HoiBenh_ThanNhanTao } from './admin/HoiBenh/HoiBenh_ThanNhanTao.component';
 import { KhamBenh_ThanNhanTao } from './admin/KhamBenh/KhamBenh_ThanNhanTao.component';
 
+import { HanhChinh_Sosinh } from './admin/HanhChinh/HanhChinh_Sosinh.component';
+import { HoiBenh_Sosinh } from './admin/HoiBenh/HoiBenh_Sosinh.component';
+import { KhamBenh_Sosinh } from './admin/KhamBenh/KhamBenh_Sosinh.component';
+import { TongKet_Sosinh } from './admin/TongKet/TongKet_Sosinh.component';
+
 import { HanhChinh_NgoaiTruYHCT } from './admin/HanhChinh/HanhChinh_NgoaiTruYHCT.component';
 import { HoiBenh_NoiTruYHCT } from './admin/HoiBenh/HoiBenh_NoiTruYHCT.component';
 import { HoiBenh_BenhAnSanKhoa } from './admin/HoiBenh/HoiBenh_BenhAnSanKhoa.component';
@@ -85,6 +90,7 @@ import { KhamBenh_Tim } from './admin/KhamBenh/KhamBenh_Tim.component';
     // Hành chính
     HanhChinhBaseComponent,
     HanhChinh_NoiTruYHCT,
+    HanhChinh_Sosinh,
     HanhChinh_Base,
     HanhChinh_BenhAnSanKhoa,
     HanhChinh_ThanNhanTao,
@@ -94,6 +100,7 @@ import { KhamBenh_Tim } from './admin/KhamBenh/KhamBenh_Tim.component';
     // Hỏi bệnh
     HoiBenhBaseComponent,
     HoiBenh_NoiTruYHCT,
+    HoiBenh_Sosinh,
     HoiBenh_NoiKhoa,
     HoiBenh_BenhAnSanKhoa,
     HoiBenh_DaLieu,
@@ -113,7 +120,7 @@ import { KhamBenh_Tim } from './admin/KhamBenh/KhamBenh_Tim.component';
     KhamBenh_Bong,
     KhamBenh_Tim,
     KhamBenh_NgoaiTruYHCT,
-
+    KhamBenh_Sosinh,
 
     // Tổng kết
     TongKetBaseComponent,
@@ -124,7 +131,7 @@ import { KhamBenh_Tim } from './admin/KhamBenh/KhamBenh_Tim.component';
     TongKet_ThanNhanTao,
     TongKet_Bong,
     TongKet_NgoaiTruYHCT,
-
+    TongKet_Sosinh,
     
     PdfViewerComponent,
     VirtualScrollExampleComponent,

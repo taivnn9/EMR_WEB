@@ -13,6 +13,7 @@ import { HoiBenh_Tim } from './HoiBenh_Tim.component';
 import { HoiBenh_NgoaiTruYHCT } from './HoiBenh_NgoaiTruYHCT.component';
 import { SharedService } from '@app/_services/shared.service';
 import { Subscription } from 'rxjs';
+import {HoiBenh_Sosinh} from "@app/admin/HoiBenh/HoiBenh_Sosinh.component";
 
 
 @Component({
@@ -105,6 +106,11 @@ export class HoiBenhBaseComponent implements OnInit, AfterViewInit {
                     // @ts-ignore
                     // tslint:disable-next-line:max-line-length
                     this.dynamicComponent = <HoiBenh_NgoaiTruYHCT>this.dynamicInsert.createComponent(componentFactory_NgoaiTruYHCT).instance;
+                    break;
+                case LoaiBenhAnEMR.SoSinh:
+                    const componentFactory_Sosinh = this.factoryResolver.resolveComponentFactory(HoiBenh_Sosinh);
+                    this.dynamicInsert.clear();
+                    this.dynamicComponent = <HoiBenh_Sosinh>this.dynamicInsert.createComponent(componentFactory_Sosinh).instance;
                     break;
                 default:
                     break;
