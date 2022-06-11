@@ -25,7 +25,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" role="button" (click)="announceCommand(commandEnum.Save)" style="color: darkblue;">
+        <a class="nav-link" data-widget="navbar-search" role="button" (click)="saveEvents = saveEvents + 1; announceCommand(commandEnum.Save)" style="color: darkblue;">
           <i class="far fa-save"></i>
           Lưu
         </a>
@@ -47,22 +47,22 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- <span class="dropdown-item dropdown-header">15 Notifications</span> -->
           <!-- <div class="dropdown-divider"></div> -->
-          <a  role="button" class="dropdown-item" (click)="print(env.HANH_CHINH)">
+          <a  role="button" class="dropdown-item" (click)="printEvents = printEvents + 1;print(env.HANH_CHINH)">
             <i class="far fa-file-pdf"></i>   In Hành chính
             <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="print(env.HOI_BENH)">
+          <a class="dropdown-item" (click)="printEvents = printEvents + 1;print(env.HOI_BENH)">
             <i class="far fa-file-pdf"></i>   In Hỏi bệnh
             <!-- <span class="float-right text-muted text-sm">12 hours</span> -->
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="print(env.KHAM_BENH)">
+          <a class="dropdown-item" (click)="printEvents = printEvents + 1;print(env.KHAM_BENH)">
             <i class="far fa-file-pdf"></i>   In Khám bệnh
             <!-- <span class="float-right text-muted text-sm">2 days</span> -->
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="print(env.TONG_KET)">
+          <a class="dropdown-item" (click)="printEvents = printEvents + 1;print(env.TONG_KET)">
             <i class="far fa-file-pdf"></i>  In Tổng kết
             <!-- <span class="float-right text-muted text-sm">2 days</span> -->
           </a>

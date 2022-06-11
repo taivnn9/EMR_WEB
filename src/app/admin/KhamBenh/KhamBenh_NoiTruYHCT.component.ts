@@ -69,9 +69,9 @@ export class KhamBenh_NoiTruYHCT implements OnInit {
         console.log(`save()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component lưu lại
         this.sharedService.confirmPSave({
-            Type: environment.HOI_BENH,
+            Type: environment.KHAM_BENH,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_HOI_BENH
+            Sender: environment.ROUTE_KHAM_BENH
         });
     }
 
@@ -79,9 +79,9 @@ export class KhamBenh_NoiTruYHCT implements OnInit {
         console.log(`print()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component in ra
         this.sharedService.confirmPrint({
-            Type: environment.HOI_BENH,
+            Type: environment.KHAM_BENH,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_HOI_BENH
+            Sender: environment.ROUTE_KHAM_BENH
         });
     }
 }
