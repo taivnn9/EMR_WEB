@@ -64,5 +64,22 @@ export class HoiBenh_Tim implements OnInit {
         });
     }
 
+    appendVal(obj : any, key: any, value: any){
+        if(this._isNullOrEmpty(obj)){
+            obj = {}
+        }
+        obj[key] = value;
+        return obj;
+
+    }
+
+    _isNullOrEmpty(value : any){
+          if(value == null || value == undefined || value == ''){
+              return true;
+          }
+          return false;
+    }
+
+
 
 }
