@@ -54,7 +54,7 @@ export class TongKet_Bong implements OnInit {
 
 
     doCommand(command: number) {
-        console.log(`KhamBenh_NoiTruYHCT đã nhận được lệnh ${command}`);
+        console.log(`TongKet_Bong đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -104,4 +104,8 @@ export class TongKet_Bong implements OnInit {
             }
         });
     }
+
+    
+
+
 }
