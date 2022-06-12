@@ -13,6 +13,9 @@
 ## Bệnh án da liễu
 `http://localhost:4200/khoi-tao?IDBenhAn=akkrNkZJTWVWbC9Gby9iVCtzMUE3RlBqVEtOcHlBZGs3RDdJOXNQaXV5WlJZWEQzZVVaUEwyOHBSZDZwNlJDNUs4enQ2cXRxS1d1aXRJeUFpTHFON2hMRmN5cGdvUzV4aStFYWllUEtVMWRGSjlkalZHYURJd0xmUTVLRHJ5bXI=`
 
+## Bệnh án sơ sinh
+`http://localhost:4200/khoi-tao?IDBenhAn=STBjcWRuM0hZYWNna3dDbC9sWEJzQm45b3VuYnJnOGFnU3pxc0Y5akxoZm9JVm9qT0U2aXlEc2NsN0E0bmtPdmpFaTcvcVFXV05tN29CNlNNYnZScXBnNUtHSzJ5S1lJWDg1TUdnaVFyWC9udFFtL3VCd3Mra21zSkR0Z1I3K00=`
+
 ## Main lib 
 * [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 * [Font Awesome Free ](https://fontawesome.com) version 5.15.3
