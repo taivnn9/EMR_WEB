@@ -1,37 +1,47 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThongTinHoSoBenhAn } from '@app/_models/EMR_MAIN/XemBenhAn/xemBenhAn';
 import { Command } from '@app/_models/UTILS/Command';
 import { EmrService } from '@app/_services/emr.service';
-import { NhanVienService } from '@app/_services/NhanVien.service';
-import { OverlayService } from '@app/_services/overlay.service';
 import { SharedService } from '@app/_services/shared.service';
 import { environment } from '@environments/environment';
-import { ComponentType, ToastrService } from 'ngx-toastr';
-import { KetQuaDichVuHisProComponent } from '../ChucNangKhac/KetQuaDichVuHisPro.component';
-import { KetQuaToDieuTriHisProComponent } from '../ChucNangKhac/KetQuaToDieuTriHisPro.component';
+import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
+import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
+import { NhanVien } from '@app/_models/EMR_MAIN/BenhVien/nhanVien';
+import { NhanVienService } from '@app/_services/NhanVien.service';
+import {Common} from "@app/_models/EMR_MAIN/Common";
+
 
 @Component({
-    selector: 'TongKet_Bong',
-    templateUrl: 'TongKet_Bong.component.html'
+    selector: 'HanhChinh_Sosinh',
+    templateUrl: 'HanhChinh_Sosinh.component.html'
 })
-export class TongKet_Bong implements OnInit {
+export class HanhChinh_Sosinh implements OnInit {
+
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
+    DiaChi: string;
 
     constructor(
         private emrService: EmrService,
-        private sharedService: SharedService,
         private nhanVienSerivce: NhanVienService,
-        private overlayService: OverlayService,
+        private sharedService: SharedService,
+        private http: HttpClient,
         private toastr: ToastrService,
-    ) { }
-
+    ) {
+        // this.subscription = sharedService.commandAnnounced$.subscribe(
+        //     command => {
+        //         this.sharedService.confirmCommand(`HanhChinh_Sosinh receive ${command}`);
+        //     });
+    }
 
     ListNhanVien = []
 
     async ngOnInit() {
+
         this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;
-        
+        this.DiaChi = (new Common).GetDiaChi(this.ThongTinHoSoBenhAn.HanhChinhBenhNhan);
+
         await this.nhanVienSerivce.ListNhanVien().toPromise().then(
             (data: any) => {
                 if (data.Success) {
@@ -50,11 +60,11 @@ export class TongKet_Bong implements OnInit {
             error => {
                 this.toastr.error(error, 'Lỗi');
             });
+
     }
 
-
     doCommand(command: number) {
-        console.log(`TongKet_Bong đã nhận được lệnh ${command}`);
+        console.log(`HanhChinh_Sosinh đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -72,10 +82,9 @@ export class TongKet_Bong implements OnInit {
         console.log(`save()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component lưu lại
         this.sharedService.confirmPSave({
-
-            Type: environment.TONG_KET,
+            Type: environment.HANH_CHINH,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_TONG_KET
+            Sender: environment.ROUTE_HANH_CHINH
         });
     }
 
@@ -83,29 +92,9 @@ export class TongKet_Bong implements OnInit {
         console.log(`print()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component in ra
         this.sharedService.confirmPrint({
-
-            Type: environment.TONG_KET,
+            Type: environment.HANH_CHINH,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_TONG_KET
+            Sender: environment.ROUTE_HANH_CHINH
         });
     }
-
-    ketQuaToDieuTriHisProComponent = KetQuaToDieuTriHisProComponent
-    ketQuaDichVuHisProComponent = KetQuaDichVuHisProComponent
-    openModal() {
-        this.open(this.ketQuaToDieuTriHisProComponent)
-    }
-    open(content: TemplateRef<any> | ComponentType<any> | string) {
-        const ref = this.overlayService.open(content, null);
-
-        ref.afterClosed$.subscribe(res => {
-            if (content === this.ketQuaToDieuTriHisProComponent) {
-                console.log(res.data);
-            }
-        });
-    }
-
-    
-
-
 }

@@ -12,10 +12,10 @@ import { KetQuaDichVuHisProComponent } from '../ChucNangKhac/KetQuaDichVuHisPro.
 import { KetQuaToDieuTriHisProComponent } from '../ChucNangKhac/KetQuaToDieuTriHisPro.component';
 
 @Component({
-    selector: 'TongKet_Bong',
-    templateUrl: 'TongKet_Bong.component.html'
+    selector: 'TongKet_Sosinh',
+    templateUrl: 'TongKet_Sosinh.component.html'
 })
-export class TongKet_Bong implements OnInit {
+export class TongKet_Sosinh implements OnInit {
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
 
     constructor(
@@ -31,7 +31,7 @@ export class TongKet_Bong implements OnInit {
 
     async ngOnInit() {
         this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;
-        
+
         await this.nhanVienSerivce.ListNhanVien().toPromise().then(
             (data: any) => {
                 if (data.Success) {
@@ -54,7 +54,7 @@ export class TongKet_Bong implements OnInit {
 
 
     doCommand(command: number) {
-        console.log(`TongKet_Bong đã nhận được lệnh ${command}`);
+        console.log(`TongKet_Sosinh đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -72,7 +72,6 @@ export class TongKet_Bong implements OnInit {
         console.log(`save()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component lưu lại
         this.sharedService.confirmPSave({
-
             Type: environment.TONG_KET,
             Data: this.ThongTinHoSoBenhAn,
             Sender: environment.ROUTE_TONG_KET
@@ -83,7 +82,6 @@ export class TongKet_Bong implements OnInit {
         console.log(`print()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component in ra
         this.sharedService.confirmPrint({
-
             Type: environment.TONG_KET,
             Data: this.ThongTinHoSoBenhAn,
             Sender: environment.ROUTE_TONG_KET
@@ -105,7 +103,15 @@ export class TongKet_Bong implements OnInit {
         });
     }
 
-    
+    appendVal(obj: any, key: any, value: any) {
+        if(this._isNullOrEmpty(obj)){
+            obj = {}
+        }
+        obj[key] = value;
+        return obj;
+    }
 
-
+    _isNullOrEmpty(value: any) {
+        return value == null || value == '';
+    }
 }

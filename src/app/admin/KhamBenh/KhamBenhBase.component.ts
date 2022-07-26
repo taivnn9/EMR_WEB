@@ -1,35 +1,38 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { LoaiBenhAnEMR } from '@app/_models/EMR_MAIN/TrangBia/TrangBia';
+import {AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {LoaiBenhAnEMR} from '@app/_models/EMR_MAIN/TrangBia/TrangBia';
 // import { ERMADO } from '@app/_models/ERMADO';
-import { EmrService } from '@app/_services/emr.service';
-import { KhamBenh_DaLieu } from './KhamBenh_DaLieu.component';
-import { KhamBenh_NoiTruYHCT } from './KhamBenh_NoiTruYHCT.component';
-import { KhamBenh_NoiKhoa } from './KhamBenh_NoiKhoa.component';
-import { KhamBenh_BenhAnSanKhoa } from './KhamBenh_BenhAnSanKhoa.component';
-import { KhamBenh_ThanNhanTao } from './KhamBenh_ThanNhanTao.component';
+import {EmrService} from '@app/_services/emr.service';
+import {KhamBenh_DaLieu} from './KhamBenh_DaLieu.component';
+import {KhamBenh_NoiTruYHCT} from './KhamBenh_NoiTruYHCT.component';
+import {KhamBenh_NoiKhoa} from './KhamBenh_NoiKhoa.component';
+import {KhamBenh_BenhAnSanKhoa} from './KhamBenh_BenhAnSanKhoa.component';
+import {KhamBenh_ThanNhanTao} from './KhamBenh_ThanNhanTao.component';
+import {KhamBenh_Sosinh} from './KhamBenh_Sosinh.component';
 import {HoiBenh_ThanNhanTao} from "@app/admin/HoiBenh/HoiBenh_ThanNhanTao.component";
-import { KhamBenh_Bong } from './KhamBenh_Bong.component';
-import { KhamBenh_Tim } from './KhamBenh_Tim.component';
-import { KhamBenh_NgoaiTruYHCT } from './KhamBenh_NgoaiTruYHCT.component';
-import { SharedService } from '@app/_services/shared.service';
-import { Subscription } from 'rxjs';
+import {KhamBenh_Bong} from './KhamBenh_Bong.component';
+import {KhamBenh_Tim} from './KhamBenh_Tim.component';
+import {KhamBenh_NgoaiTruYHCT} from './KhamBenh_NgoaiTruYHCT.component';
+import {SharedService} from '@app/_services/shared.service';
+import {Subscription} from 'rxjs';
 
 @Component({
     selector: 'KhamBenhBaseComponent',
-    template: `<ng-template #dynamicInsert></ng-template>`
+    template: `
+      <ng-template #dynamicInsert></ng-template>`
 })
 export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
-    @ViewChild('dynamicInsert', { read: ViewContainerRef })
+    @ViewChild('dynamicInsert', {read: ViewContainerRef})
     dynamicInsert: ViewContainerRef;
 
     dynamicComponent: any;
     subscription: Subscription;
+
     constructor(
         private factoryResolver: ComponentFactoryResolver,
         private emrService: EmrService,
         private sharedService: SharedService,
-    ) { 
-        
+    ) {
+
         // listener
         this.subscription = sharedService.commandAnnounced$.subscribe(
             command => {
@@ -41,7 +44,8 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicComponent.doCommand(command);
                 }
             });
-        }
+    }
+
     ngAfterViewInit(): void {
         setTimeout(() => {
             switch (+this.emrService.ThongTinHoSoBenhAn.LoaiBenhAnEMR) {
@@ -82,18 +86,23 @@ export class KhamBenhBaseComponent implements OnInit, AfterViewInit {
                     this.dynamicInsert.clear();
                     // this.dynamicInsert.createComponent(componentFactory);
                     this.dynamicComponent = <KhamBenh_Tim>this.dynamicInsert.createComponent(componentFactoryTim).instance;
-                    // dynamicComponent.value = 10;
+                // dynamicComponent.value = 10;
                 case LoaiBenhAnEMR.NgoaiTruYHCT:
                     const componentFactoryNgoaiTru = this.factoryResolver.resolveComponentFactory(KhamBenh_NgoaiTruYHCT);
                     console.log(this.dynamicInsert);
                     this.dynamicInsert.clear();
                     // tslint:disable-next-line:max-line-length
-                    this.dynamicComponent = <KhamBenh_NgoaiTruYHCT> this.dynamicInsert.createComponent(componentFactoryNgoaiTru).instance;
+                    this.dynamicComponent = <KhamBenh_NgoaiTruYHCT>this.dynamicInsert.createComponent(componentFactoryNgoaiTru).instance;
                     break;
                 case LoaiBenhAnEMR.ThanNhanTao:
                     const componentFactoryThanNhanTao = this.factoryResolver.resolveComponentFactory(KhamBenh_ThanNhanTao);
                     this.dynamicInsert.clear();
-                    this.dynamicComponent = <KhamBenh_ThanNhanTao> this.dynamicInsert.createComponent(componentFactoryThanNhanTao).instance;
+                    this.dynamicComponent = <KhamBenh_ThanNhanTao>this.dynamicInsert.createComponent(componentFactoryThanNhanTao).instance;
+                    break;
+                case LoaiBenhAnEMR.SoSinh:
+                    const componentFactory_Sosinh = this.factoryResolver.resolveComponentFactory(KhamBenh_Sosinh);
+                    this.dynamicInsert.clear();
+                    this.dynamicComponent = <KhamBenh_Sosinh>this.dynamicInsert.createComponent(componentFactory_Sosinh).instance;
                     break;
                 default:
                     break;

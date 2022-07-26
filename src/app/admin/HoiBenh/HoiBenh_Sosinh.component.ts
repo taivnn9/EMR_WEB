@@ -7,13 +7,14 @@ import { OverlayService } from '@app/_services/overlay.service';
 import { SharedService } from '@app/_services/shared.service';
 import { environment } from '@environments/environment';
 import { ComponentType, ToastrService } from 'ngx-toastr';
+import {BenhAnSoSinh} from "@app/_models/EMR_MAIN/BenhAn/BenhAnSoSinh";
 
 
 @Component({ 
-    selector: 'HoiBenh_Bong',
-    templateUrl: 'HoiBenh_Bong.component.html' 
+    selector: 'HoiBenh_Sosinh',
+    templateUrl: 'HoiBenh_Sosinh.component.html'
 })
-export class HoiBenh_Bong implements OnInit {
+export class HoiBenh_Sosinh implements OnInit {
 
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
 
@@ -29,7 +30,7 @@ export class HoiBenh_Bong implements OnInit {
 
     
     doCommand(command: number) {
-        console.log(`HoiBenh_Bong đã nhận được lệnh ${command}`);
+        console.log(`HoiBenh_Sosinh đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -62,24 +63,6 @@ export class HoiBenh_Bong implements OnInit {
             Sender: environment.ROUTE_HOI_BENH
         });
     }
-    appendVal(obj: any, key: any, value: any) {
-        if(this._isNullOrEmpty(obj)){
-            obj = {}
-        }
-        obj[key] = value;
-        return obj;
-    }
-
-    _isNullOrEmpty(value: any) {
-        if (value == null || value == undefined || value == '') {
-            return true;
-        }
-        return false;
-    }
-
-    
-
-
 
 
 }

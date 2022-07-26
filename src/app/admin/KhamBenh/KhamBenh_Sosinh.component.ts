@@ -1,38 +1,32 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThongTinHoSoBenhAn } from '@app/_models/EMR_MAIN/XemBenhAn/xemBenhAn';
 import { Command } from '@app/_models/UTILS/Command';
 import { EmrService } from '@app/_services/emr.service';
-import { NhanVienService } from '@app/_services/NhanVien.service';
-import { OverlayService } from '@app/_services/overlay.service';
 import { SharedService } from '@app/_services/shared.service';
 import { environment } from '@environments/environment';
-import { ComponentType, ToastrService } from 'ngx-toastr';
-import { KetQuaDichVuHisProComponent } from '../ChucNangKhac/KetQuaDichVuHisPro.component';
-import { KetQuaToDieuTriHisProComponent } from '../ChucNangKhac/KetQuaToDieuTriHisPro.component';
+import { ToastrService } from 'ngx-toastr';
+import { NhanVienService } from '@app/_services/NhanVien.service';
 
-@Component({
-    selector: 'TongKet_Bong',
-    templateUrl: 'TongKet_Bong.component.html'
+@Component({ 
+    selector: 'KhamBenh_Sosinh',
+    templateUrl: 'KhamBenh_Sosinh.component.html'
 })
-export class TongKet_Bong implements OnInit {
+export class KhamBenh_Sosinh implements OnInit {
     ThongTinHoSoBenhAn: ThongTinHoSoBenhAn
 
     constructor(
         private emrService: EmrService,
         private sharedService: SharedService,
-        private nhanVienSerivce: NhanVienService,
-        private overlayService: OverlayService,
-        private toastr: ToastrService,
-    ) { }
-
+        private nhanVienService: NhanVienService,
+        private toastr: ToastrService
+    ) {}
 
     ListNhanVien = []
-
     async ngOnInit() {
         this.ThongTinHoSoBenhAn = this.emrService.ThongTinHoSoBenhAn;
-        
-        await this.nhanVienSerivce.ListNhanVien().toPromise().then(
+        this.ThongTinHoSoBenhAn.BenhAn.RoiHanKhaNangSinhDuc = 2;
+        await this.nhanVienService.ListNhanVien().toPromise().then(
             (data: any) => {
                 if (data.Success) {
                     const items = []
@@ -49,12 +43,11 @@ export class TongKet_Bong implements OnInit {
             },
             error => {
                 this.toastr.error(error, 'Lỗi');
-            });
+        });
     }
 
-
+    
     doCommand(command: number) {
-        console.log(`TongKet_Bong đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
@@ -72,10 +65,9 @@ export class TongKet_Bong implements OnInit {
         console.log(`save()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component lưu lại
         this.sharedService.confirmPSave({
-
-            Type: environment.TONG_KET,
+            Type: environment.KHAM_BENH,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_TONG_KET
+            Sender: environment.ROUTE_KHAM_BENH
         });
     }
 
@@ -83,29 +75,9 @@ export class TongKet_Bong implements OnInit {
         console.log(`print()`, this.ThongTinHoSoBenhAn);
         // Gửi trả lại thông tin hồ sơ bệnh án để Admin component in ra
         this.sharedService.confirmPrint({
-
-            Type: environment.TONG_KET,
+            Type: environment.KHAM_BENH,
             Data: this.ThongTinHoSoBenhAn,
-            Sender: environment.ROUTE_TONG_KET
+            Sender: environment.ROUTE_KHAM_BENH
         });
     }
-
-    ketQuaToDieuTriHisProComponent = KetQuaToDieuTriHisProComponent
-    ketQuaDichVuHisProComponent = KetQuaDichVuHisProComponent
-    openModal() {
-        this.open(this.ketQuaToDieuTriHisProComponent)
-    }
-    open(content: TemplateRef<any> | ComponentType<any> | string) {
-        const ref = this.overlayService.open(content, null);
-
-        ref.afterClosed$.subscribe(res => {
-            if (content === this.ketQuaToDieuTriHisProComponent) {
-                console.log(res.data);
-            }
-        });
-    }
-
-    
-
-
 }

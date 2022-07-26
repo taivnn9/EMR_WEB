@@ -53,7 +53,7 @@ export class KhamBenh_Bong implements OnInit {
 
     
     doCommand(command: number) {
-        console.log(`KhamBenh_NoiTruYHCT đã nhận được lệnh ${command}`);
+        console.log(`KhamBenh_Bong đã nhận được lệnh ${command}`);
         switch (+command) {
             case Command.Save:
                 this.save()
