@@ -1,4 +1,0 @@
-<router-outlet></router-outlet>
-<!-- <ngx-spinner [fullScreen]="false" type="line-spin-fade" size="medium">
-	<p class="loading">Loading Awesomeness...</p>
-</ngx-spinner> -->
